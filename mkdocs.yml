@@ -1,0 +1,93 @@
+site_name: Learning Hub
+site_url: https://sitename.example
+
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+
+  font:
+    text: Roboto
+    code: Fira Code
+
+  palette:
+    # Chế độ sáng: nền trắng, nhấn đỏ đậm
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Chuyển sang chế độ tối
+
+    # Chế độ tối: nền xanh đen đậm, nhấn đỏ
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Chuyển sang chế độ sáng
+
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - search.suggest
+    - search.highlight
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/viet15t12
+    - icon: fontawesome/brands/facebook
+      link: https://facebook.com
+
+copyright: Copyright &copy; 2026 Learning Hub
+
+markdown_extensions:
+  # Emoji + icon
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  # Code blocks: syntax highlight, title, line numbers, highlight lines
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+  # Content tabs
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # Admonitions / callouts
+  - admonition
+  - pymdownx.details
+
+  # Các tiện ích markdown khác hay dùng
+  - tables
+  - footnotes
+  - def_list
+  - toc:
+      permalink: true
+
+plugins:
+  - search

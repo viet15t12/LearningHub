@@ -1,0 +1,116 @@
+/* ============================================================
+   LEARNING HUB - THEME TÙY CHỈNH: ĐỎ ĐẬM + TRẮNG + XANH ĐEN
+   ============================================================ */
+
+/* ---------- Chế độ sáng: nền trắng, nhấn đỏ đậm ---------- */
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #8B0000;
+    --md-primary-fg-color--light: #A83232;
+    --md-primary-fg-color--dark: #5C0000;
+    --md-accent-fg-color: #B71C1C;
+
+    --md-default-bg-color: #FFFFFF;
+    --md-typeset-a-color: #8B0000;
+}
+
+/* ---------- Chế độ tối: nền xanh đen đậm, nhấn đỏ ---------- */
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #8B0000;
+    --md-primary-fg-color--light: #A83232;
+    --md-primary-fg-color--dark: #5C0000;
+    --md-accent-fg-color: #B71C1C;
+
+    --md-default-bg-color: #0B0F19;
+    /* xanh đen đậm */
+    --md-default-fg-color: #E6E6E6;
+    --md-default-fg-color--light: #B0B0B0;
+    --md-typeset-a-color: #E05353;
+    /* link đỏ nhạt, dễ đọc trên nền tối */
+
+    /* Card / code block nền tối hơn 1 chút để tạo chiều sâu */
+    --md-code-bg-color: #131826;
+    --md-code-fg-color: #D8DEE9;
+}
+
+/* ---------- Header & Tabs: nền đỏ đậm ---------- */
+.md-header,
+.md-tabs {
+    background-color: #8B0000;
+}
+
+/* ---------- Font code ---------- */
+.md-typeset code,
+.md-typeset pre {
+    font-family: "Fira Code", monospace;
+    font-size: 0.85em;
+}
+
+/* ---------- Footer: đồng bộ tông xanh đen đậm ---------- */
+.md-footer {
+    background-color: #05070C;
+}
+
+.md-footer-meta {
+    background-color: #05070C;
+}
+
+.md-footer__link {
+    color: #E6E6E6;
+}
+
+.md-footer__link:hover {
+    color: #E05353;
+}
+
+/* ---------- Admonition (callout): viền đỏ nhấn ---------- */
+.md-typeset .admonition,
+.md-typeset details {
+    border-color: #8B0000;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+    background-color: rgba(139, 0, 0, 0.1);
+}
+
+/* ---------- Nút toggle sáng/tối bo tròn nhẹ cho mềm mắt ---------- */
+.md-header__button.md-icon {
+    border-radius: 4px;
+}
+
+/* ============================================================
+   MỞ RỘNG BỀ NGANG: content + sidebar navigation
+   ============================================================ */
+
+/* Trải hết chiều rộng màn hình thay vì căn giữa với max-width cố định
+   -> sidebar nằm sát mép trái, không còn khoảng trắng thừa 2 bên */
+.md-grid {
+    max-width: 100%;
+}
+
+/* Gutter (khoảng đệm) nhỏ 2 bên cho đỡ sát viền quá */
+.md-main__inner {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+}
+
+/* Cột nội dung chính đọc tài liệu (mặc định giới hạn khá hẹp) */
+.md-content {
+    max-width: none;
+}
+
+/* Sidebar bên trái (danh sách lựa chọn / navigation) rộng hơn */
+.md-sidebar--primary {
+    width: 14rem;
+    /* mặc định khoảng 12rem */
+}
+
+/* Sidebar bên phải (mục lục Table of Contents) rộng hơn tương ứng */
+.md-sidebar--secondary {
+    width: 14rem;
+}
+
+/* Chữ trong sidebar to hơn một chút cho dễ đọc */
+.md-nav__item .md-nav__link {
+    font-size: 0.75rem;
+}
