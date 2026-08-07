@@ -1,6 +1,5 @@
 site_name: Learning Hub
-site_url: https://sitename.example
-
+site_url: https://viet15t12.github.io/LearningHub/
 theme:
   name: material
   logo: assets/logo.svg
