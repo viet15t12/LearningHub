@@ -1,0 +1,23 @@
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="700" height="300" fill="#ffffff"/>
+  <text x="350" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#1f2937">Single-Mode Fiber</text>
+
+  <!-- cladding -->
+  <rect x="80" y="120" width="540" height="60" rx="10" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- narrow core -->
+  <rect x="80" y="143" width="540" height="14" fill="#fca5a5" stroke="#b91c1c" stroke-width="1.5"/>
+
+  <!-- laser source -->
+  <circle cx="60" cy="150" r="16" fill="#111827"/>
+  <text x="60" y="195" text-anchor="middle" font-size="12" fill="#374151">Laser</text>
+
+  <!-- single straight light path -->
+  <line x1="80" y1="150" x2="620" y2="150" stroke="#facc15" stroke-width="4"/>
+
+  <text x="660" y="155" font-size="13" fill="#374151">Đích</text>
+
+  <g font-size="13" fill="#4b5563">
+    <text x="350" y="215" text-anchor="middle">Lõi hẹp → ánh sáng đi theo MỘT góc (mode) duy nhất</text>
+    <text x="350" y="238" text-anchor="middle">Truyền được khoảng cách xa hơn, nhưng SFP laser đắt hơn</text>
+  </g>
+</svg>

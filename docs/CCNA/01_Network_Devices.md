@@ -1,31 +1,47 @@
-# 1. NETWORKING DEVICES
+# 1. Network Devices
 
-## What is a network?
+<iframe width="1337" height="752" src="https://www.youtube.com/embed/H8W9oMNSuwo?list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ" title="Free CCNA | Network Devices | Day 1 | CCNA 200-301 Complete Course" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-A computer network is a digital telecommunications network allows NODES to share RESOURCES.
+## Mạng máy tính là gì?
 
-A CLIENT is a device that accesses a service made available by a SERVER.
+Mạng máy tính (computer network) là một mạng viễn thông kỹ thuật số, cho phép các NÚT MẠNG (NODES) chia sẻ TÀI NGUYÊN (RESOURCES).
 
-A SERVER is a device that provides functions or services for CLIENTS.
+MÁY KHÁCH (CLIENT) là thiết bị truy cập một dịch vụ do MÁY CHỦ (SERVER) cung cấp.
 
-- Note : The same device can be a CLIENT in some situations and a SERVER in other situations. Ex: A Peer-to-Peer network.
+MÁY CHỦ (SERVER) là thiết bị cung cấp các chức năng hoặc dịch vụ cho CLIENT.
 
-SWITCHES (Level 2):
+> **Lưu ý:** Cùng một thiết bị có thể vừa là CLIENT trong tình huống này, vừa là SERVER trong tình huống khác. Ví dụ: mạng ngang hàng (Peer-to-Peer).
 
-- provide connectivity to hosts within the same LAN (Local Area Network)
-- Have many network interfaces/ports for End Hosts to connect to.
-- DO NOT provide connectivity between LANs/over the Internet.
+![Sơ đồ mô hình Client-Server](../assets/ccna/01/01-client-server.svg){ .network-svg }
 
-ROUTERS (Level 3):
+---
 
-- have fewer network interfaces than switches.
-- are used to provide connectivity BETWEEN LANs.
-- are used to send data over the Internet.
+## SWITCH (Lớp 2)
 
-FIREWALL (Can be Level 3,4, and 7):
+- Cung cấp kết nối cho các **host** trong cùng một **LAN** (Local Area Network — mạng cục bộ).
+- Có **nhiều port** để các thiết bị đầu cuối (End Host) kết nối vào.
+- **KHÔNG** cung cấp kết nối giữa các LAN hoặc qua Internet.
 
-- Firewalls are specialty hardware network security devices that control network traffic entering/exiting your network.
-- Can be places "inside" or "outside" the network.
-- Monitor and control network traffic based on configured rules.
-- Are known as "Next-Generation Firewalls" when they include more modern and advanced filtering capabilities.
-- Host-based firewalls are software applications that filter traffic entering and exiting a host machine, like a PC.
+![Sơ đồ kết nối Switch trong mạng LAN](../assets/ccna/01/02-switch.svg){ .network-svg }
+
+---
+
+## ROUTER (Lớp 3)
+
+- Có **ít port hơn switch**.
+- Dùng để cung cấp kết nối **GIỮA các LAN**.
+- Dùng để **truyền dữ liệu qua Internet**.
+
+![Sơ đồ Router kết nối các mạng LAN](../assets/ccna/01/03-router.svg){ .network-svg }
+
+---
+
+## FIREWALL (Có thể hoạt động ở Lớp 3, 4 và 7)
+
+- Là thiết bị bảo mật mạng chuyên dụng, kiểm soát lưu lượng mạng **ra/vào** mạng của bạn.
+- Có thể đặt **"bên trong"** hoặc **"bên ngoài"** mạng.
+- **Giám sát và kiểm soát** lưu lượng mạng dựa trên các quy tắc (rules) được cấu hình.
+- Được gọi là **"Next-Generation Firewall"** (Tường lửa thế hệ mới) khi tích hợp các khả năng lọc hiện đại và nâng cao hơn.
+- **Host-based firewall** (Tường lửa trên máy chủ) là ứng dụng phần mềm lọc lưu lượng ra/vào một máy đơn lẻ, như PC.
+
+![Sơ đồ Firewall bảo vệ mạng nội bộ](../assets/ccna/01/04-firewall.svg){ .network-svg }

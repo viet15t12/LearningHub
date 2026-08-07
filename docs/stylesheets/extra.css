@@ -114,3 +114,53 @@
 .md-nav__item .md-nav__link {
     font-size: 0.75rem;
 }
+
+/* SVG diagrams trong tài liệu */
+.network-svg {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+}
+
+.network-svg line.network-wire,
+.network-svg path.network-wire {
+    stroke-dasharray: 8 5;
+    stroke-dashoffset: 0;
+    animation: network-flow 2.2s linear infinite;
+}
+
+.network-svg rect,
+.network-svg ellipse,
+.network-svg circle:not(.network-dot),
+.network-svg path:not(.network-wire),
+.network-svg line:not(.network-wire) {
+    animation: none !important;
+}
+
+.network-dot {
+    animation: network-pulse 1.2s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+@keyframes network-flow {
+    to {
+        stroke-dashoffset: -100;
+    }
+}
+
+@keyframes network-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.18);
+        opacity: 1;
+    }
+}

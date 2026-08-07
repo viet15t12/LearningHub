@@ -1,0 +1,25 @@
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="700" height="300" fill="#ffffff"/>
+  <text x="350" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#1f2937">Multimode Fiber</text>
+
+  <!-- cladding -->
+  <rect x="80" y="90" width="540" height="120" rx="10" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
+  <!-- wide core -->
+  <rect x="80" y="120" width="540" height="60" fill="#fca5a5" stroke="#b91c1c" stroke-width="1.5"/>
+
+  <!-- LED source -->
+  <circle cx="60" cy="150" r="16" fill="#166534"/>
+  <text x="60" y="195" text-anchor="middle" font-size="12" fill="#374151">LED</text>
+
+  <!-- multiple bouncing light paths -->
+  <polyline points="80,150 160,125 240,175 320,125 400,175 480,125 560,175 620,150" fill="none" stroke="#facc15" stroke-width="3"/>
+  <polyline points="80,150 180,150 280,150 380,150 480,150 620,150" fill="none" stroke="#f97316" stroke-width="3"/>
+  <polyline points="80,150 160,170 240,135 320,170 400,135 480,170 560,135 620,150" fill="none" stroke="#eab308" stroke-width="3"/>
+
+  <text x="660" y="155" font-size="13" fill="#374151">Đích</text>
+
+  <g font-size="13" fill="#4b5563">
+    <text x="350" y="235" text-anchor="middle">Lõi rộng → ánh sáng đi theo NHIỀU góc (modes) khác nhau</text>
+    <text x="350" y="258" text-anchor="middle">Khoảng cách ngắn hơn Single-Mode, nhưng SFP LED rẻ hơn</text>
+  </g>
+</svg>

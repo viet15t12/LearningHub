@@ -1,0 +1,47 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="700" height="420" fill="#ffffff"/>
+  <text x="350" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#1f2937">Cáp UTP – 4 Cặp Dây Xoắn (8 Dây)</text>
+
+  <!-- Outer cable jacket -->
+  <circle cx="350" cy="230" r="150" fill="#f3f4f6" stroke="#9ca3af" stroke-width="4"/>
+  <text x="350" y="395" text-anchor="middle" font-size="15" fill="#4b5563">Vỏ bọc ngoài (Jacket)</text>
+
+  <!-- helper to draw a twisted pair as two intertwined dashed circles -->
+  <!-- Pair 1 - orange -->
+  <g>
+    <circle cx="300" cy="190" r="30" fill="#fdba74" stroke="#c2410c" stroke-width="3"/>
+    <circle cx="330" cy="190" r="30" fill="#fed7aa" stroke="#c2410c" stroke-width="3" opacity="0.9"/>
+    <text x="315" y="150" text-anchor="middle" font-size="13" fill="#9a3412" font-weight="600">Cặp 1</text>
+  </g>
+
+  <!-- Pair 2 - green -->
+  <g>
+    <circle cx="410" cy="190" r="30" fill="#86efac" stroke="#15803d" stroke-width="3"/>
+    <circle cx="440" cy="190" r="30" fill="#bbf7d0" stroke="#15803d" stroke-width="3" opacity="0.9"/>
+    <text x="425" y="150" text-anchor="middle" font-size="13" fill="#166534" font-weight="600">Cặp 2</text>
+  </g>
+
+  <!-- Pair 3 - blue -->
+  <g>
+    <circle cx="300" cy="280" r="30" fill="#93c5fd" stroke="#1d4ed8" stroke-width="3"/>
+    <circle cx="330" cy="280" r="30" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="3" opacity="0.9"/>
+    <text x="315" y="330" text-anchor="middle" font-size="13" fill="#1e40af" font-weight="600">Cặp 3</text>
+  </g>
+
+  <!-- Pair 4 - brown -->
+  <g>
+    <circle cx="410" cy="280" r="30" fill="#d6b48a" stroke="#78350f" stroke-width="3"/>
+    <circle cx="440" cy="280" r="30" fill="#e7c9a3" stroke="#78350f" stroke-width="3" opacity="0.9"/>
+    <text x="425" y="330" text-anchor="middle" font-size="13" fill="#78350f" font-weight="600">Cặp 4</text>
+  </g>
+
+  <!-- Twist marks -->
+  <g stroke="#6b7280" stroke-width="1.5" fill="none" stroke-dasharray="3,3">
+    <path d="M 275 175 Q 315 165 355 175"/>
+    <path d="M 385 175 Q 425 165 465 175"/>
+    <path d="M 275 295 Q 315 305 355 295"/>
+    <path d="M 385 295 Q 425 305 465 295"/>
+  </g>
+
+  <text x="350" y="60" text-anchor="middle" font-size="14" fill="#6b7280">Mỗi cặp dây được xoắn vào nhau để chống nhiễu EMI</text>
+</svg>
