@@ -103,6 +103,59 @@
 .md-sidebar--primary {
     width: 14rem;
     /* mặc định khoảng 12rem */
+    transition: width 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Nút ẩn/hiện danh sách điều hướng bên trái (desktop) */
+.sidebar-toggle {
+    display: inline-grid;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    margin-left: 0.2rem;
+    padding: 0.4rem;
+    color: var(--md-primary-bg-color);
+    background: transparent;
+    border: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-toggle svg {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+    transition: transform 0.2s ease;
+}
+
+body.sidebar-collapsed .md-sidebar--primary {
+    width: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+}
+
+body.sidebar-collapsed .sidebar-toggle svg {
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width: 76.234375em) {
+    .sidebar-toggle {
+        display: none;
+    }
+
+    body.sidebar-collapsed .md-sidebar--primary {
+        width: auto;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
 }
 
 /* Sidebar bên phải (mục lục Table of Contents) rộng hơn tương ứng */

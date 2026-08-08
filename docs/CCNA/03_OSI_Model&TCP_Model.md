@@ -1,4 +1,4 @@
-# TCP/IP và OSI Model — Tài liệu tổng hợp (CCNA)
+# 3. TCP/IP và OSI Model
 
 > Tài liệu này gộp lại ghi chép cũ (chi tiết mô hình OSI 7 lớp) và nội dung buổi học mới về mô hình TCP/IP 5 lớp, trình bày lại theo một mạch thống nhất, dùng thuật ngữ kỹ thuật chuẩn tiếng Việt.
 
