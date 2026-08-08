@@ -1,0 +1,59 @@
+<svg viewBox="0 0 780 340" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="780" height="340" fill="#ffffff"/>
+  <text x="390" y="28" font-size="18" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Quá trình đóng gói dữ liệu (Encapsulation)</text>
+
+  <!-- row 1: DATA -->
+  <g>
+    <text x="40" y="70" font-size="13" fill="#333">L5-7</text>
+    <rect x="90" y="52" width="180" height="34" fill="#2c5f8a"/>
+    <text x="180" y="74" font-size="13" fill="#fff" text-anchor="middle">DATA</text>
+    <text x="290" y="74" font-size="13" fill="#555">→ PDU: DATA</text>
+  </g>
+
+  <!-- row 2: SEGMENT -->
+  <g>
+    <text x="40" y="122" font-size="13" fill="#333">L4</text>
+    <rect x="90" y="104" width="40" height="34" fill="#5c9b3f"/>
+    <text x="110" y="126" font-size="11" fill="#fff" text-anchor="middle">L4</text>
+    <rect x="130" y="104" width="180" height="34" fill="#2c5f8a"/>
+    <text x="220" y="126" font-size="13" fill="#fff" text-anchor="middle">DATA</text>
+    <text x="330" y="126" font-size="13" fill="#555">→ PDU: SEGMENT</text>
+  </g>
+
+  <!-- row 3: PACKET -->
+  <g>
+    <text x="40" y="174" font-size="13" fill="#333">L3</text>
+    <rect x="90" y="156" width="40" height="34" fill="#c98a2b"/>
+    <text x="110" y="178" font-size="11" fill="#fff" text-anchor="middle">L3</text>
+    <rect x="130" y="156" width="40" height="34" fill="#5c9b3f"/>
+    <text x="150" y="178" font-size="11" fill="#fff" text-anchor="middle">L4</text>
+    <rect x="170" y="156" width="180" height="34" fill="#2c5f8a"/>
+    <text x="260" y="178" font-size="13" fill="#fff" text-anchor="middle">DATA</text>
+    <text x="370" y="178" font-size="13" fill="#555">→ PDU: PACKET</text>
+  </g>
+
+  <!-- row 4: FRAME -->
+  <g>
+    <text x="40" y="226" font-size="13" fill="#333">L2</text>
+    <rect x="90" y="208" width="40" height="34" fill="#b0472f"/>
+    <text x="110" y="230" font-size="11" fill="#fff" text-anchor="middle">L2</text>
+    <rect x="130" y="208" width="40" height="34" fill="#c98a2b"/>
+    <text x="150" y="230" font-size="11" fill="#fff" text-anchor="middle">L3</text>
+    <rect x="170" y="208" width="40" height="34" fill="#5c9b3f"/>
+    <text x="190" y="230" font-size="11" fill="#fff" text-anchor="middle">L4</text>
+    <rect x="210" y="208" width="180" height="34" fill="#2c5f8a"/>
+    <text x="300" y="230" font-size="13" fill="#fff" text-anchor="middle">DATA</text>
+    <rect x="390" y="208" width="40" height="34" fill="#b0472f"/>
+    <text x="410" y="230" font-size="11" fill="#fff" text-anchor="middle">L2</text>
+    <text x="470" y="230" font-size="13" fill="#555">→ PDU: FRAME (Header + Trailer)</text>
+  </g>
+
+  <!-- row 5: BITS -->
+  <g>
+    <text x="40" y="278" font-size="13" fill="#333">L1</text>
+    <text x="90" y="278" font-size="14" fill="#6b3fa0" font-family="monospace">01001101 01101111 01110000 ...</text>
+    <text x="470" y="278" font-size="13" fill="#555">→ PDU: BIT (truyền vật lý)</text>
+  </g>
+
+  <text x="390" y="315" font-size="12" fill="#555" text-anchor="middle">Chiều đi xuống (Application → Physical) = Encapsulation · Chiều đi lên = De-encapsulation</text>
+</svg>
