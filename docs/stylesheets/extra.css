@@ -1,41 +1,60 @@
 /* ============================================================
-   LEARNING HUB - THEME TÙY CHỈNH: ĐỎ ĐẬM + TRẮNG + XANH ĐEN
+   LEARNING HUB - THEME TÙY CHỈNH: XANH #3B82F6 CHỦ ĐẠO
    ============================================================ */
 
-/* ---------- Chế độ sáng: nền trắng, nhấn đỏ đậm ---------- */
+:root {
+    --blue-50: #eff6ff;
+    --blue-100: #dbeafe;
+    --blue-200: #bfdbfe;
+    --blue-300: #93c5fd;
+    --blue-500: #3b82f6;
+    --blue-600: #2563eb;
+    --blue-700: #1d4ed8;
+    --blue-900: #0f172a;
+    --blue-950: #020b1d;
+}
+
+/* ---------- Chế độ sáng: nền trắng, nhấn xanh chủ đạo ---------- */
 [data-md-color-scheme="default"] {
-    --md-primary-fg-color: #8B0000;
-    --md-primary-fg-color--light: #A83232;
-    --md-primary-fg-color--dark: #5C0000;
-    --md-accent-fg-color: #B71C1C;
+    --md-primary-fg-color: #3b82f6;
+    --md-primary-fg-color--light: #60a5fa;
+    --md-primary-fg-color--dark: #1d4ed8;
+    --md-accent-fg-color: #2563eb;
 
-    --md-default-bg-color: #FFFFFF;
-    --md-typeset-a-color: #8B0000;
+    --md-default-bg-color: #f8fbff;
+    --md-default-fg-color: #0f172a;
+    --md-default-fg-color--light: #475569;
+    --md-typeset-a-color: #2563eb;
+    --md-code-bg-color: #f1f5f9;
 }
 
-/* ---------- Chế độ tối: nền xanh đen đậm, nhấn đỏ ---------- */
+/* ---------- Chế độ tối: nền xanh đen đậm, nhấn xanh chủ đạo ---------- */
 [data-md-color-scheme="slate"] {
-    --md-primary-fg-color: #8B0000;
-    --md-primary-fg-color--light: #A83232;
-    --md-primary-fg-color--dark: #5C0000;
-    --md-accent-fg-color: #B71C1C;
+    --md-primary-fg-color: #3b82f6;
+    --md-primary-fg-color--light: #60a5fa;
+    --md-primary-fg-color--dark: #1d4ed8;
+    --md-accent-fg-color: #93c5fd;
 
-    --md-default-bg-color: #0B0F19;
-    /* xanh đen đậm */
-    --md-default-fg-color: #E6E6E6;
-    --md-default-fg-color--light: #B0B0B0;
-    --md-typeset-a-color: #E05353;
-    /* link đỏ nhạt, dễ đọc trên nền tối */
+    --md-default-bg-color: #091421;
+    --md-default-fg-color: #e2e8f0;
+    --md-default-fg-color--light: #cbd5e1;
+    --md-typeset-a-color: #93c5fd;
 
-    /* Card / code block nền tối hơn 1 chút để tạo chiều sâu */
-    --md-code-bg-color: #131826;
-    --md-code-fg-color: #D8DEE9;
+    --md-code-bg-color: #111f2d;
+    --md-code-fg-color: #dbeafe;
 }
 
-/* ---------- Header & Tabs: nền đỏ đậm ---------- */
+/* ---------- Header & Tabs: hàng đầu, sáng rõ, modern ---------- */
 .md-header,
 .md-tabs {
-    background-color: #8B0000;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
+    box-shadow: 0 2px 12px rgba(59, 130, 246, 0.25);
+}
+
+.md-header__topic,
+.md-tabs__item--active,
+.md-tabs__item:hover {
+    color: #ffffff !important;
 }
 
 /* ---------- Font code ---------- */
@@ -47,66 +66,72 @@
 
 /* ---------- Footer: đồng bộ tông xanh đen đậm ---------- */
 .md-footer {
-    background-color: #05070C;
+    background: linear-gradient(180deg, #0b1728 0%, #0f172a 100%);
 }
 
 .md-footer-meta {
-    background-color: #05070C;
+    background: rgba(15, 23, 42, 0.96);
 }
 
 .md-footer__link {
-    color: #E6E6E6;
+    color: #e2e8f0;
 }
 
 .md-footer__link:hover {
-    color: #E05353;
+    color: #93c5fd;
 }
 
-/* ---------- Admonition (callout): viền đỏ nhấn ---------- */
+/* ---------- Admonition (callout): viền xanh nổi bật ---------- */
 .md-typeset .admonition,
 .md-typeset details {
-    border-color: #8B0000;
+    border-color: #3b82f6;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.08);
 }
 
 .md-typeset .admonition-title,
 .md-typeset summary {
-    background-color: rgba(139, 0, 0, 0.1);
+    background: rgba(59, 130, 246, 0.09);
+    color: var(--md-default-fg-color);
 }
 
-/* ---------- Nút toggle sáng/tối bo tròn nhẹ cho mềm mắt ---------- */
+/* ---------- Button toggle sáng/tối ---------- */
 .md-header__button.md-icon {
-    border-radius: 4px;
+    border-radius: 6px;
+}
+
+/* ---------- Link hover / focus ---------- */
+.md-typeset a:hover,
+.md-typeset a:focus {
+    color: #1d4ed8;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover,
+[data-md-color-scheme="slate"] .md-typeset a:focus {
+    color: #bfdbfe;
 }
 
 /* ============================================================
    MỞ RỘNG BỀ NGANG: content + sidebar navigation
    ============================================================ */
 
-/* Trải hết chiều rộng màn hình thay vì căn giữa với max-width cố định
-   -> sidebar nằm sát mép trái, không còn khoảng trắng thừa 2 bên */
 .md-grid {
     max-width: 100%;
 }
 
-/* Gutter (khoảng đệm) nhỏ 2 bên cho đỡ sát viền quá */
 .md-main__inner {
     padding-left: 1.2rem;
     padding-right: 1.2rem;
 }
 
-/* Cột nội dung chính đọc tài liệu (mặc định giới hạn khá hẹp) */
 .md-content {
     max-width: none;
 }
 
-/* Sidebar bên trái (danh sách lựa chọn / navigation) rộng hơn */
 .md-sidebar--primary {
     width: 14rem;
-    /* mặc định khoảng 12rem */
     transition: width 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* Nút ẩn/hiện danh sách điều hướng bên trái (desktop) */
 .sidebar-toggle {
     display: inline-grid;
     flex-shrink: 0;
@@ -158,12 +183,10 @@ body.sidebar-collapsed .sidebar-toggle svg {
     }
 }
 
-/* Sidebar bên phải (mục lục Table of Contents) rộng hơn tương ứng */
 .md-sidebar--secondary {
     width: 14rem;
 }
 
-/* Chữ trong sidebar to hơn một chút cho dễ đọc */
 .md-nav__item .md-nav__link {
     font-size: 0.75rem;
 }

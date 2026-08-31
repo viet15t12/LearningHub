@@ -10,7 +10,7 @@ theme:
     code: Fira Code
 
   palette:
-    # Chế độ sáng: nền trắng, nhấn đỏ đậm
+    # Chế độ sáng: nền trắng, nhấn xanh chủ đạo
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: custom
@@ -19,7 +19,7 @@ theme:
         icon: material/weather-night
         name: Chuyển sang chế độ tối
 
-    # Chế độ tối: nền xanh đen đậm, nhấn đỏ
+    # Chế độ tối: nền xanh đen đậm, nhấn xanh chủ đạo
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: custom
