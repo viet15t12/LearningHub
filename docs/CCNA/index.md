@@ -26,7 +26,7 @@
 |---:|---|---|
 | 1 | Thiết bị mạng | [Networking Devices](01_Network_Devices.md) |
 | 2 | Giao diện và dây cáp | [Interfaces and Cables](02_Interfaces_and_Cables.md) |
-| 3 | Mô hình OSI và TCP/IP | [OSI Model and TCP/IP Suite](03_OSI_Model_TCPSuite.md) |
+| 3 | Mô hình OSI và TCP/IP | [OSI Model and TCP/IP Suite](03_OSI_Model&TCP_Model.md) |
 | 4 | Nhập môn CLI | [Introduction to CLI](04_Intro_to_CLI.md) |
 | 5–6 | Chuyển mạch Ethernet LAN | [Phần 1](05_Ethernet_LAN_Switching_Part1.md) · [Phần 2](06_Ethernet_LAN_Switching_Part2.md) |
 | 7–8 | Địa chỉ IPv4 | [Phần 1](07_IPv4_Addressing_Part1.md) · [Phần 2](08_IPv4_Addressing_Part2.md) |

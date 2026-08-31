@@ -14,11 +14,18 @@ Hệ thống ghi chú theo khóa **Complete CCNA 200-301** của Jeremy's IT Lab
 
 [Bắt đầu học CCNA :material-arrow-right:](CCNA/index.md){ .md-button .md-button--primary }
 
+### :material-language-go: Learning Go
+
+Ghi chú theo từng chương của cuốn **Learning Go**, tập trung vào cách thiết lập
+môi trường, công cụ, cú pháp và cách viết chương trình Go rõ ràng, hiệu quả.
+
+[Bắt đầu học Go :material-arrow-right:](GOLANG/README.md){ .md-button .md-button--primary }
+
 ---
 
 ## Cách sử dụng tài liệu
 
-1. Chọn chủ đề từ thanh điều hướng phía trên.
+1. Chọn CCNA hoặc Golang từ danh sách nội dung.
 2. Học các bài theo thứ tự được đánh số.
 3. Kết hợp ghi chú lý thuyết với lab thực hành.
 4. Quay lại các bài cũ để ôn tập và củng cố kiến thức.
@@ -30,7 +37,7 @@ Hệ thống ghi chú theo khóa **Complete CCNA 200-301** của Jeremy's IT Lab
 
 - [x] CCNA 200-301
 - [ ] Python
-- [ ] Golang
+- [x] Golang *(đang cập nhật)*
 - [ ] Linux và DevOps
 
 ---
