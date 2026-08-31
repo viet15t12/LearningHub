@@ -113,3 +113,9 @@ Tên của file binary này sẽ trùng với phần khai báo module trong file
 ```bash
 $ go build -o hello
 ```
+
+### Go fmt
+
+Một trong những mục tiêu của Go là giúp lập trình viên viết code hiệu quả hơn (efficiently). Điều này đòi hỏi Go phải có cú pháp đơn giản và tốc độ biên dịch nhanh, buộc các tác giả phải xem xét lại (reconsider) cách định dạng code. Hầu hết các ngôn ngữ khác đều cung cấp sự linh hoạt rất lớn (great deal of flexibility) trong cú pháp. Ngược lại, Go áp dụng một chuẩn định dạng duy nhất, giúp việc phát triển các công cụ phân tích và xử lý code trở nên dễ dàng hơn nhiều (great deal easier). Nhờ đó, việc xây dựng trình biên dịch cũng như các công cụ tự động sinh mã được đơn giản hóa đáng kể.
+
+Ngoài ra còn có một ích khác. Trước đây 
