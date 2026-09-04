@@ -6,13 +6,12 @@ từng chương để thuận tiện học tập, thực hành và tra cứu.
 
 [Bắt đầu từ chương 1 :material-arrow-right:](chapter_01_setting_up_go_environment.md){ .md-button .md-button--primary }
 
----
-
 ## Nội dung hiện có
 
 | Chương | Nội dung | Bài học |
 |---:|---|---|
 | 1 | Thiết lập môi trường Go | [Setting Up Your Go Environment](chapter_01_setting_up_go_environment.md) |
+| 2 | Kiểu tiền khai báo và khai báo | [Predeclared Types & Declarations](chapter_02_predeclared_types_and_declaraions.md) |
 
 Các chương tiếp theo sẽ được bổ sung trong quá trình học.
 
