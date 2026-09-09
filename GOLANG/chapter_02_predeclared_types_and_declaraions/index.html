@@ -1,0 +1,3557 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://viet15t12.github.io/LearningHub/GOLANG/chapter_02_predeclared_types_and_declaraions/">
+      
+      
+        <link rel="prev" href="../chapter_01_setting_up_go_environment/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Chapter 2: Predeclared Types & Declarations - Learning Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-predeclared-types-declarations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learning Hub" class="md-header__button md-logo" aria-label="Learning Hub" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learning Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 2: Predeclared Types &amp; Declarations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Chuyển sang chế độ tối"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang chế độ tối" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Chuyển sang chế độ sáng"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang chế độ sáng" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Learning Hub
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CCNA/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  CCNA
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  GOLANG
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learning Hub" class="md-nav__button md-logo" aria-label="Learning Hub" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    Learning Hub
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../CCNA/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CCNA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CCNA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/01_Network_Devices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Network Devices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/02_Interfaces_and_Cables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. INTERFACES AND CABLES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/03_OSI_Model%26TCP_Model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. TCP/IP và OSI Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/04_Intro_to_CLI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. GIỚI THIỆU VỀ CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/05_Ethernet_LAN_Switching_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. ETHERNET LAN SWITCHING : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/06_Ethernet_LAN_Switching_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. ETHERNET LAN SWITCHING : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/07_IPv4_Addressing_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. IPv4 ADDRESSING : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/08_IPv4_Addressing_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. IPv4 ADDRESSING : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/09_Switch_Interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. SWITCH INTERFACES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/10_The_IPv4_Header/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. THE IPv4 HEADER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/11_Routing_Fundamentals_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. ROUTING FUNDAMENTALS : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/11_Static_Routing_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. STATIC ROUTING : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/12_Life_of_a_Packet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. LIFE OF A PACKET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/13_Subnetting_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. SUBNETTING : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/14_Subnetting_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. SUBNETTING : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/15_Subnetting_VLSM_Part3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. SUBNETTING (VLSM) : PART 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/16_VLAN_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. VLANS : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/17_VLAN_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. VLANS : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/18_VLAN_Part3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. VLANS : PART 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/19_DTP_VTP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. DTP / VTP (Not in Syllabus)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/20_Spanning_Tree_Protocol_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. SPANNING TREE PROTOCOL (STP) : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/21_Spanning_Tree_Protocol_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. SPANNING TREE PROTOCOL (STP) : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/22_Rapid_Spanning_Tree_Protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. RAPID SPANNING TREE PROTOCOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/23_Etherchannel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. ETHERCHANNEL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/24_DynamicRouting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. DYNAMIC ROUTING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/25_RIP_and_EIGRP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. RIP and EIGRP (IGP : DYNAMIC VECTOR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/26_OSPF_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. OSPF : PART 1 (IGP : LINK STATE)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/27_OSPF_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. OSPF : PART 2 (IGP : LINK STATE)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/28_OSPF_Part3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. OSPF : PART 3 (IGP: LINK STATE)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/29_First_Hop_Redundancy_Protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. FIRST HOP REDUNDANCY PROTOCOLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/30_TCP_and_UDP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. TCP and UDP (LAYER 4 PROTOCOLS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/31_IPv6_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. IPv6 : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/32_IPv6_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. IPv6 : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/33_IPv6_Part3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. IPv6 : PART 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/34_Standard_Access_Control_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34. STANDARD ACCESS CONTROL LISTS (ACL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/35_Extended_Access_Control_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35. EXTENDED ACCESS CONTROL LISTS (EACL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/36_CDP_and_LLDP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36. CDP and LLDP (Layer 2 Discovery Protocol)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/37_NTP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37. NTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/38_DNS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38. DNS (Domain Name System)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/39_DHCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39. DHCP (Dynamic Host Configuration Protocol)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/40_SNMP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    40. SNMP (Simple Network Management Protocol)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/41_SYSLOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    41. SYSLOG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/42_SSH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    42. SSH (Secure Shell)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/43_FTP_and_TFTP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    43. FTP and TFTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/44_NAT_Static_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    44. NAT (STATIC): PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/45_NAT_Dynamic_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    45. NAT (DYNAMIC): PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/46_QoS_VoiceLan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    46. QoS (Voice VLANs) : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/47_QoS_Quality_of_Service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    47. QoS (Quality of Service) : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/48_Security_Fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    48. SECURITY FUNDAMENTALS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/49_Port_Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    49. PORT SECURITY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/50_DHCP_Snooping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    50. DHCP SNOOPING (LAYER 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/51_Dynamic_Arp_Inspection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    51. DYNAMIC ARP INSPECTION
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/52_LAN_Architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    52. LAN ARCHITECTURES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/53_WAN_Architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    53. WAN ARCHITECTURES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/54_Virtualization_Containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    54. VIRTUALIZATION (CONTAINERS): PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/54_Virtualization_VRF_Part3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    54. VIRTUALIZATION (VRF): PART 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/54_Virtualizations_and_Cloud_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    54. VIRTUALIZATION AND CLOUD: PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/55_Wireless_Fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    55. WIRELESS FUNDAMENTALS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/56_Wireless_Architecutres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    56. WIRELESS ARCHITECTURES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/57_Wireless_Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    57. WIRELESS SECURITY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/58_Wireless_Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    58. WIRELESS CONFIGURATION
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/59_Introduction_to_Network_Automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    59. INTRODUCTION TO NETWORK AUTOMATION
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/60_JSON_XML_YAML/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    60. JSON, XML, AND YAML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/61_REST_APIs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    61. REST APIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/62_Software_Defined_Networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    62. SOFTWARE DEFINED NETWORKING (SDN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CCNA/63_Ansible_Puppet_Chef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    63. ANSIBLE, PUPPET, AND CHEF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOLANG
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GOLANG
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_01_setting_up_go_environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Setting Up Your Go Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Predeclared Types &amp; Declarations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Predeclared Types &amp; Declarations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cac-kieu-tien-khai-bao-the-predeclared-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Các kiểu tiền khai báo (The Predeclared Types)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Các kiểu tiền khai báo (The Predeclared Types)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-zero-value-gia-tri-mac-inh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Zero Value (Giá trị mặc định)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-integer-literal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An Integer Literal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-floating-point-literal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Floating-point Literal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-rune-literal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Rune Literal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-string-literal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A String Literal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Booleans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-types-cac-kieu-so" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Types (Các kiểu số)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numeric Types (Các kiểu số)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integer-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-point-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floating-point Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so-luoc-ve-string-va-rune" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sơ lược về String và Rune
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sơ lược về String và Rune">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chuyen-oi-kieu-tuong-minh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chuyển đổi kiểu tường minh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literals-are-untyped-literal-khong-co-kieu-co-inh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literals Are Untyped (Literal không có kiểu cố định)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var-versus-var-so-voi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        var Versus := (var so với :=)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-dung-const" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sử dụng const
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hang-so-co-kieu-va-khong-co-kieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hằng số có kiểu và không có kiểu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unused-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unused Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#at-ten-bien-va-hang-so" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đặt tên biến và hằng số
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bai-tap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bài tập
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tong-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tổng kết
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cac-kieu-tien-khai-bao-the-predeclared-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Các kiểu tiền khai báo (The Predeclared Types)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Các kiểu tiền khai báo (The Predeclared Types)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-zero-value-gia-tri-mac-inh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Zero Value (Giá trị mặc định)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-integer-literal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An Integer Literal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-floating-point-literal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Floating-point Literal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-rune-literal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Rune Literal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-string-literal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A String Literal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Booleans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-types-cac-kieu-so" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Types (Các kiểu số)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numeric Types (Các kiểu số)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integer-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-point-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floating-point Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so-luoc-ve-string-va-rune" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sơ lược về String và Rune
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sơ lược về String và Rune">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chuyen-oi-kieu-tuong-minh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chuyển đổi kiểu tường minh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literals-are-untyped-literal-khong-co-kieu-co-inh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literals Are Untyped (Literal không có kiểu cố định)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var-versus-var-so-voi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        var Versus := (var so với :=)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-dung-const" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sử dụng const
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hang-so-co-kieu-va-khong-co-kieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hằng số có kiểu và không có kiểu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unused-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unused Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#at-ten-bien-va-hang-so" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đặt tên biến và hằng số
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bai-tap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bài tập
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tong-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tổng kết
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-2-predeclared-types-declarations">Chapter 2: Predeclared Types &amp; Declarations<a class="headerlink" href="#chapter-2-predeclared-types-declarations" title="Permanent link">&para;</a></h1>
+<h2 id="cac-kieu-tien-khai-bao-the-predeclared-types">Các kiểu tiền khai báo (The Predeclared Types)<a class="headerlink" href="#cac-kieu-tien-khai-bao-the-predeclared-types" title="Permanent link">&para;</a></h2>
+<p>Go có nhiều kiểu dữ liệu được tích hợp sẵn trong ngôn ngữ. Chúng được gọi là <em>predeclared types</em>. Tương tự như những ngôn ngữ khác, Go cũng có các kiểu như: <code>boolean</code>, <code>integer</code>, <code>float</code>, và <code>string</code>. Việc sử dụng các kiểu dữ liệu một cách hiệu quả đôi khi là một thử thách đối với lập trình viên mới chuyển từ ngôn ngữ khác sang. Hãy cùng điểm qua các khái niệm cơ bản của kiểu dữ liệu trong Go.</p>
+<h3 id="the-zero-value-gia-tri-mac-inh">The Zero Value (Giá trị mặc định)<a class="headerlink" href="#the-zero-value-gia-tri-mac-inh" title="Permanent link">&para;</a></h3>
+<p>Giống như các ngôn ngữ khác, Go luôn gán một giá trị mặc định (zero value) cho bất kỳ biến nào đã được khai báo mà chưa được gán giá trị. Tuỳ vào kiểu dữ liệu, giá trị mặc định đó sẽ khác nhau.</p>
+<table>
+<thead>
+<tr>
+<th>Kiểu dữ liệu</th>
+<th>Zero Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>int</code>, <code>float64</code>, ...</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td><code>""</code></td>
+</tr>
+<tr>
+<td><code>pointer</code>, <code>slice</code>, <code>map</code>, <code>channel</code>, <code>func</code>, <code>interface</code></td>
+<td><code>nil</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="literals">Literals<a class="headerlink" href="#literals" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Lưu ý:</strong> <em>Literal</em> dịch ra là "hằng số viết trực tiếp trong mã nguồn".</p>
+</blockquote>
+<p>Go literal là một số, một ký tự, hoặc một chuỗi ký tự được biểu diễn một cách tường minh (explicitly).</p>
+<p>Có 4 loại literal phổ biến:
+- An integer literal
+- A floating-point literal
+- A rune literal
+- A string literal</p>
+<blockquote>
+<p><strong>Lưu ý:</strong> Khi bàn về số phức, chúng ta sẽ tìm hiểu loại thứ 5 — một loại hiếm gặp.</p>
+</blockquote>
+<h4 id="an-integer-literal">An Integer Literal<a class="headerlink" href="#an-integer-literal" title="Permanent link">&para;</a></h4>
+<p>Integer literal là một dãy các chữ số. Mặc định ở hệ 10 (base 10), nhưng có thể dùng tiền tố khác để biểu diễn hệ cơ số khác: <code>0b</code> cho hệ nhị phân (base 2), <code>0o</code> cho hệ bát phân (base 8), hoặc <code>0x</code> cho hệ thập lục phân (base 16). Tiền tố có thể viết hoa hoặc thường. Một số bắt đầu bằng <code>0</code> mà không kèm chữ cái phía sau cũng là cách biểu diễn số bát phân — nhưng đừng dùng vì rất dễ gây nhầm lẫn.</p>
+<p>Để dễ đọc hơn với các integer literal dài, Go cho phép chèn dấu gạch dưới <code>_</code> ở giữa literal, ví dụ để phân nhóm theo hàng nghìn ở hệ 10 (<code>1_234</code>). Dấu gạch dưới không ảnh hưởng đến giá trị số. Giới hạn duy nhất: không đặt <code>_</code> ở đầu/cuối số, và không đặt hai dấu <code>_</code> liền kề nhau. Hãy dùng chúng để ngắt số hệ 10 tại vị trí hàng nghìn, hoặc ngắt số nhị phân/bát phân/thập lục phân tại ranh giới 1, 2, hoặc 4 byte — đừng lạm dụng bằng cách đặt <code>_</code> giữa mọi chữ số.</p>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">dec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1234</span><span class="w">        </span><span class="c1">// hệ 10</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">bin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b1010</span><span class="w">      </span><span class="c1">// hệ 2</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">oct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mo">0o17</span><span class="w">        </span><span class="c1">// hệ 8</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">hex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1A2B</span><span class="w">      </span><span class="c1">// hệ 16</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">confusing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mo">017</span><span class="w">   </span><span class="c1">// KHÔNG nên dùng — cũng là hệ 8 nhưng dễ gây nhầm</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kd">var</span><span class="w"> </span><span class="nx">readable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1_000_000</span><span class="w">   </span><span class="c1">// dễ đọc hơn</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kd">var</span><span class="w"> </span><span class="nx">messy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1_0_0_0_0_0_0</span><span class="w">  </span><span class="c1">// KHÔNG nên dùng — dùng _ quá mức</span>
+</span></code></pre></div>
+<h4 id="a-floating-point-literal">A Floating-point Literal<a class="headerlink" href="#a-floating-point-literal" title="Permanent link">&para;</a></h4>
+<p>Floating-point literal có dấu chấm thập phân để biểu diễn phần lẻ của giá trị. Có thể có số mũ, chỉ định bằng chữ <code>e</code> kèm số dương hoặc âm (ví dụ <code>6.03e23</code>). Cũng có thể viết dưới dạng thập lục phân bằng tiền tố <code>0x</code>, dùng chữ <code>p</code> để chỉ định số mũ (<code>0x12.34p5</code>, tương đương <code>582.5</code> ở hệ 10). Giống integer literal, có thể dùng <code>_</code> để định dạng cho dễ đọc.</p>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">f1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">f2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">.25</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">f3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.03e23</span><span class="w">         </span><span class="c1">// ký hiệu khoa học, số mũ dương</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">f4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5e-10</span><span class="w">         </span><span class="c1">// số mũ âm</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">f5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x12</span><span class="mf">.34</span><span class="nx">p5</span><span class="w">       </span><span class="c1">// hệ thập lục phân, = 582.5 ở hệ 10</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">f6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1_234</span><span class="mf">.567</span><span class="nx">_8</span><span class="w">     </span><span class="c1">// dùng _ để dễ đọc</span>
+</span></code></pre></div>
+<blockquote>
+<p><strong>Lưu ý thực tế:</strong> Nên dùng hệ 10 để biểu diễn integer và floating-point literal. Bát phân khá hiếm gặp, chủ yếu dùng cho quyền hạn POSIX (ví dụ <code>0o777</code> cho <code>rwxrwxrwx</code>). Thập lục phân và nhị phân đôi khi dùng cho bit filter hoặc ứng dụng mạng, hạ tầng. Tránh dùng escape số cho rune literal, trừ khi ngữ cảnh giúp code rõ ràng hơn.</p>
+</blockquote>
+<h4 id="a-rune-literal">A Rune Literal<a class="headerlink" href="#a-rune-literal" title="Permanent link">&para;</a></h4>
+<p>Rune literal biểu diễn một ký tự, đặt trong dấu nháy đơn. Khác với nhiều ngôn ngữ khác, trong Go dấu nháy đơn và nháy kép <strong>không</strong> thể dùng thay thế cho nhau. Rune literal có thể viết dưới dạng:</p>
+<ul>
+<li>Ký tự Unicode đơn (<code>'a'</code>)</li>
+<li>Số bát phân 8-bit (<code>'\141'</code>)</li>
+<li>Số thập lục phân 8-bit (<code>'\x61'</code>)</li>
+<li>Số thập lục phân 16-bit (<code>'\u0061'</code>)</li>
+<li>Số Unicode 32-bit (<code>'\U00000061'</code>)</li>
+</ul>
+<p>Ngoài ra còn có một số rune literal thoát bằng backslash, hữu ích nhất là: xuống dòng (<code>'\n'</code>), tab (<code>'\t'</code>), nháy đơn (<code>'\''</code>), và backslash (<code>'\\'</code>).</p>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'a'</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'\141'</span><span class="w">          </span><span class="c1">// octal</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">r3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'\x61'</span><span class="w">          </span><span class="c1">// hex 8-bit</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">r4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'\u0061'</span><span class="w">        </span><span class="c1">// hex 16-bit</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">r5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'\U00000061'</span><span class="w">    </span><span class="c1">// Unicode 32-bit</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">newline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'\n'</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kd">var</span><span class="w"> </span><span class="nx">tab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'\t'</span>
+</span></code></pre></div>
+<h4 id="a-string-literal">A String Literal<a class="headerlink" href="#a-string-literal" title="Permanent link">&para;</a></h4>
+<p>Có hai cách biểu diễn string literal:</p>
+<p><strong>Interpreted string literal</strong> — dùng dấu nháy kép, ví dụ <code>"Greetings and Salutations"</code>. Loại này chứa 0 hoặc nhiều rune literal, được gọi là "interpreted" vì nó diễn giải các rune literal (cả dạng số lẫn dạng escape) thành từng ký tự đơn. Escape nháy đơn (<code>\'</code>) không hợp lệ trong string literal — dùng escape nháy kép (<code>\"</code>) thay thế. Các ký tự không thể xuất hiện trực tiếp là: backslash chưa thoát, xuống dòng chưa thoát, và nháy kép chưa thoát.</p>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Greetings and\n\"Salutations\""</span>
+</span></code></pre></div>
+<p><strong>Raw string literal</strong> — nếu cần chứa backslash, nháy kép, hoặc xuống dòng, dùng raw string literal sẽ dễ hơn. Được bao quanh bởi dấu backtick (<code>`</code>), chứa bất kỳ ký tự nào ngoại trừ backtick, không có escape — mọi ký tự giữ nguyên như đã gõ.</p>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">`Greetings and</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="s">"Salutations"`</span>
+</span></code></pre></div>
+<h3 id="booleans">Booleans<a class="headerlink" href="#booleans" title="Permanent link">&para;</a></h3>
+<p>Kiểu <code>bool</code> biểu diễn các biến kiểu Boolean, chỉ nhận một trong hai giá trị: <code>true</code> hoặc <code>false</code>. Zero value của <code>bool</code> là <code>false</code>:</p>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">flag</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="c1">// chưa gán giá trị, mặc định là false</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">isAwesome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span></code></pre></div>
+<h3 id="numeric-types-cac-kieu-so">Numeric Types (Các kiểu số)<a class="headerlink" href="#numeric-types-cac-kieu-so" title="Permanent link">&para;</a></h3>
+<p>Go có khá nhiều kiểu dữ liệu số — khoảng 12 kiểu (cùng một vài tên gọi đặc biệt) — được chia thành ba nhóm: số nguyên, số thực dấu phẩy động, và số phức.</p>
+<h4 id="integer-types">Integer Types<a class="headerlink" href="#integer-types" title="Permanent link">&para;</a></h4>
+<p>Go cung cấp cả số nguyên có dấu và không dấu với nhiều kích thước khác nhau, từ 1 đến 8 byte.</p>
+<table>
+<thead>
+<tr>
+<th>Type name</th>
+<th>Value range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int8</code></td>
+<td>-128 to 127</td>
+</tr>
+<tr>
+<td><code>int16</code></td>
+<td>-32768 to 32767</td>
+</tr>
+<tr>
+<td><code>int32</code></td>
+<td>-2147483648 to 2147483647</td>
+</tr>
+<tr>
+<td><code>int64</code></td>
+<td>-9223372036854775808 to 9223372036854775807</td>
+</tr>
+<tr>
+<td><code>uint8</code></td>
+<td>0 to 255</td>
+</tr>
+<tr>
+<td><code>uint16</code></td>
+<td>0 to 65535</td>
+</tr>
+<tr>
+<td><code>uint32</code></td>
+<td>0 to 4294967295</td>
+</tr>
+<tr>
+<td><code>uint64</code></td>
+<td>0 to 18446744073709551615</td>
+</tr>
+</tbody>
+</table>
+<p>Có thể thấy rõ ngay từ tên gọi: zero value của mọi kiểu số nguyên là <code>0</code>.</p>
+<p><strong>Các tên gọi đặc biệt cho số nguyên</strong></p>
+<p>Go có một số tên đặc biệt dành cho các kiểu số nguyên:</p>
+<table>
+<thead>
+<tr>
+<th>Tên đặc biệt</th>
+<th>Bản chất</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>byte</code></td>
+<td>Alias (bí danh) của <code>uint8</code></td>
+<td>Có thể gán, so sánh, hoặc thực hiện phép toán giữa <code>byte</code> và <code>uint8</code> một cách hợp lệ. Trong code Go, bạn hiếm khi thấy <code>uint8</code> — người ta thường gọi nó là <code>byte</code>.</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>Trên CPU 32-bit: số nguyên có dấu 32-bit (giống <code>int32</code>). Trên hầu hết CPU 64-bit: số nguyên có dấu 64-bit (giống <code>int64</code>)</td>
+<td>Vì <code>int</code> không nhất quán giữa các nền tảng, việc gán, so sánh, hoặc thực hiện phép toán giữa <code>int</code> và <code>int32</code>/<code>int64</code> mà không chuyển đổi kiểu tường minh sẽ gây lỗi biên dịch. Integer literal mặc định có kiểu <code>int</code>.</td>
+</tr>
+<tr>
+<td><code>uint</code></td>
+<td>Tương tự <code>int</code>, nhưng không dấu (giá trị luôn là 0 hoặc dương)</td>
+<td>Áp dụng cùng quy tắc như <code>int</code> về tính không nhất quán giữa các nền tảng.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Lưu ý:</strong> Một số kiến trúc CPU 64-bit hiếm gặp dùng số nguyên có dấu 32-bit cho kiểu <code>int</code>. Go hỗ trợ ba kiến trúc như vậy: <code>amd64p32</code>, <code>mips64p32</code>, và <code>mips64p32le</code>.</p>
+</blockquote>
+<p><strong>Lựa chọn kiểu số phù hợp</strong></p>
+<p>Do Go cung cấp nhiều kiểu số nguyên, bạn có thể sẽ băn khoăn khi mới tìm hiểu. Có 3 quy tắc đơn giản để chọn:</p>
+<ul>
+<li>Nếu bạn làm việc với binary file format hoặc network protocol yêu cầu số nguyên có kích thước hoặc tính chất (có dấu/không dấu) cụ thể, hãy dùng kiểu số nguyên tương ứng.</li>
+<li>Nếu bạn viết một library function cần hoạt động với bất kỳ kiểu số nguyên nào, hãy tận dụng generics của Go và dùng tham số kiểu tổng quát để đại diện cho bất kỳ kiểu số nguyên nào.</li>
+<li>Trong mọi trường hợp còn lại, chỉ cần dùng <code>int</code>.</li>
+</ul>
+<blockquote>
+<p>Trong nhiều trường hợp, bạn có thể sẽ bắt gặp các đoạn code cũ (legacy code) có một cặp hàm làm cùng một việc, nhưng một hàm dùng <code>int64</code>, hàm kia dùng <code>uint64</code>. Lý do là API đó được tạo ra trước khi generics được thêm vào Go. Khi chưa có generics, bạn buộc phải viết các hàm với tên hơi khác nhau để triển khai cùng thuật toán cho các kiểu khác nhau. Dùng <code>int64</code> và <code>uint64</code> nghĩa là bạn chỉ cần viết code một lần, để bên gọi tự chuyển đổi kiểu khi truyền giá trị vào và khi nhận dữ liệu trả về. Bạn có thể thấy pattern này trong thư viện chuẩn của Go, cụ thể ở hai hàm <code>FormatInt</code> và <code>FormatUint</code> trong package <code>strconv</code>.</p>
+</blockquote>
+<p><strong>Các toán tử số nguyên</strong></p>
+<p>Go hỗ trợ các toán tử số học thông thường cho số nguyên: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, cùng <code>%</code> cho phép chia lấy dư (modulus). Kết quả phép chia số nguyên luôn là số nguyên; muốn có kết quả dạng số thực, bạn cần chuyển đổi kiểu trước.</p>
+<p>Hãy cẩn thận không chia một số nguyên cho <code>0</code> — điều này sẽ gây ra panic. Phép chia số nguyên trong Go tuân theo quy tắc làm tròn về 0 (truncation toward zero); xem thêm <a href="https://go.dev/ref/spec#Arithmetic_operators">Go spec - Arithmetic operators</a> để biết chi tiết đầy đủ.</p>
+<p>Bạn có thể kết hợp toán tử số học với <code>=</code> để cập nhật giá trị biến: <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>. Ví dụ, đoạn code sau khiến <code>x</code> có giá trị <code>20</code>:</p>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nx">x</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+<p>So sánh số nguyên bằng: <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>.</p>
+<p>Go cũng có các toán tử thao tác bit dành cho số nguyên: dịch bit trái/phải bằng <code>&lt;&lt;</code> và <code>&gt;&gt;</code>, hoặc bitmask với <code>&amp;</code> (AND), <code>|</code> (OR), <code>^</code> (XOR), <code>&amp;^</code> (AND NOT). Tương tự toán tử số học, có thể kết hợp với <code>=</code>: <code>&amp;=</code>, <code>|=</code>, <code>^=</code>, <code>&amp;^=</code>, <code>&lt;&lt;=</code>, <code>&gt;&gt;=</code>.</p>
+<h4 id="floating-point-types">Floating-point Types<a class="headerlink" href="#floating-point-types" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type name</th>
+<th>Largest absolute value</th>
+<th>Smallest (nonzero) absolute value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>float32</code></td>
+<td>3.40282346638528859811704183484516925440e+38</td>
+<td>1.401298464324817070923729583289916131280e-45</td>
+</tr>
+<tr>
+<td><code>float64</code></td>
+<td>1.797693134862315708145274237317043567981e+308</td>
+<td>4.940656458412465441765687928682213723651e-324</td>
+</tr>
+</tbody>
+</table>
+<p>Tương tự số nguyên, zero value của số thực dấu phẩy động là <code>0</code>.</p>
+<p>Floating-point trong Go tương tự các ngôn ngữ khác. Go tuân theo đặc tả IEEE 754, cho phép biểu diễn khoảng giá trị lớn nhưng độ chính xác giới hạn. Việc chọn kiểu khá đơn giản: trừ khi cần tương thích với định dạng có sẵn, hãy dùng <code>float64</code>. Floating-point literal mặc định có kiểu <code>float64</code>, nên luôn dùng <code>float64</code> là lựa chọn đơn giản nhất — đồng thời giúp giảm vấn đề về độ chính xác, vì <code>float32</code> chỉ có khoảng sáu, bảy chữ số thập phân chính xác. Đừng lo về khác biệt kích thước bộ nhớ trừ khi bạn đã dùng profiler và xác định đây là nguồn gây vấn đề đáng kể (kiểm thử và profiling sẽ được đề cập ở Chương 15).</p>
+<h4 id="complex-types">Complex Types<a class="headerlink" href="#complex-types" title="Permanent link">&para;</a></h4>
+<p>Go không có nhiều thứ để nói về hỗ trợ số phức. Go định nghĩa hai kiểu: <code>complex64</code> dùng <code>float32</code> cho phần thực và phần ảo, <code>complex128</code> dùng <code>float64</code>. Cả hai được khai báo bằng hàm dựng sẵn <code>complex</code>:</p>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">complexNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">complex</span><span class="p">(</span><span class="mf">20.3</span><span class="p">,</span><span class="w"> </span><span class="mf">10.2</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Go dùng vài quy tắc để xác định kiểu trả về của <code>complex</code>:</p>
+<ul>
+<li>Nếu dùng hằng số hoặc literal không có kiểu cho cả hai tham số, bạn tạo ra complex literal không có kiểu, mặc định <code>complex128</code>.</li>
+<li>Nếu cả hai giá trị là <code>float32</code>, bạn tạo ra <code>complex64</code>.</li>
+<li>Nếu một giá trị là <code>float32</code> và giá trị còn lại là hằng số/literal không có kiểu vừa trong phạm vi <code>float32</code>, bạn tạo ra <code>complex64</code>.</li>
+<li>Các trường hợp còn lại đều tạo ra <code>complex128</code>.</li>
+</ul>
+<p>Tất cả toán tử số học dấu phẩy động chuẩn đều hoạt động trên số phức. Có thể dùng <code>==</code>/<code>!=</code> để so sánh, nhưng cùng giới hạn về độ chính xác — nên dùng kỹ thuật epsilon. Trích xuất phần thực/ảo bằng hàm dựng sẵn <code>real</code> và <code>imag</code>. Package <code>math/cmplx</code> cung cấp thêm hàm thao tác với <code>complex128</code>.</p>
+<p>Zero value của cả hai kiểu số phức là số có cả phần thực lẫn phần ảo bằng <code>0</code>.</p>
+<p>Đoạn code sau minh họa cách số phức hoạt động — bạn có thể chạy thử trên Go Playground hoặc trong thư mục <code>sample_code/complex_numbers</code> của repository Chapter 2:</p>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nx">x</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">complex</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3.1</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nx">y</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">complex</span><span class="p">(</span><span class="mf">10.2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">imag</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">cmplx</span><span class="p">.</span><span class="nx">Abs</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Kết quả:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>(12.7+5.1i)
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>(-7.699999999999999+1.1i)
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>(19.3+36.62i)
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>(0.2934098482043688+0.24639022584228065i)
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>2.5
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>3.1
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>3.982461550347975
+</span></code></pre></div>
+<p>Bạn cũng thấy sự thiếu chính xác của số dấu phẩy động xuất hiện ở đây.</p>
+<p>Loại literal nguyên thủy thứ 5 chính là: Go hỗ trợ <strong>imaginary literal</strong> để biểu diễn phần ảo của số phức — trông giống hệt floating-point literal nhưng có thêm hậu tố <code>i</code>.</p>
+<p>Mặc dù có số phức như một predeclared type, Go không phải ngôn ngữ phổ biến cho tính toán số học. Việc áp dụng còn hạn chế vì các tính năng khác (như hỗ trợ ma trận) không phải một phần của ngôn ngữ, và thư viện phải dùng giải pháp kém hiệu quả như slice của slice (bạn sẽ tìm hiểu slice ở Chương 3, cách triển khai ở Chương 6). Nhưng nếu cần tính tập Mandelbrot hay triển khai bộ giải phương trình bậc hai, Go vẫn hỗ trợ bạn.</p>
+<p>Lý do Go có số phức khá đơn giản: Ken Thompson, một trong những người tạo ra Go (và Unix), nghĩ rằng số phức sẽ là tính năng thú vị. Đã có thảo luận về việc loại bỏ số phức khỏi Go trong tương lai, nhưng bỏ qua tính năng này vẫn dễ hơn.</p>
+<p>Nếu bạn muốn viết ứng dụng tính toán số học bằng Go, có thể dùng package bên thứ ba <strong>Gonum</strong> — tận dụng số phức và cung cấp thư viện cho đại số tuyến tính, ma trận, tích phân, thống kê. Nhưng nên cân nhắc các ngôn ngữ khác trước tiên.</p>
+<h3 id="so-luoc-ve-string-va-rune">Sơ lược về String và Rune<a class="headerlink" href="#so-luoc-ve-string-va-rune" title="Permanent link">&para;</a></h3>
+<p>Tiếp theo là kiểu chuỗi (string); giống như hầu hết các ngôn ngữ hiện đại, Go tích hợp sẵn kiểu chuỗi. Zero value của chuỗi là empty string. Go có hỗ trợ Unicode. Tương tự kiểu integers và floats, các chuỗi có thể được so sánh bằng nhau bằng toán tử ==, so sánh khác nhau bằng !=, hoặc so sánh thứ tự bằng &gt;, &gt;=, &lt;, &lt;=, và chúng được nối với nhau bằng toán tử +.</p>
+<p>Chuỗi trong Go là bất biến (immutable); bạn có thể gán lại giá trị cho một biến kiểu chuỗi, nhưng không thể thay đổi nội dung của chính chuỗi đã được gán cho biến đó.</p>
+<p>Go còn có một kiểu dữ liệu riêng để biểu diễn một code point đơn lẻ: kiểu <code>rune</code>. Về bản chất, <code>rune</code> chỉ là một alias của <code>int32</code>, tương tự như <code>byte</code> là alias của <code>uint8</code>. Tuy hai kiểu này tương đương nhau về mặt kỹ thuật, nhưng khi muốn biểu diễn một ký tự, bạn nên ưu tiên dùng <code>rune</code> thay vì <code>int32</code> — điều này giúp code dễ đọc và thể hiện đúng ý định hơn. Vì vậy, không khó đoán: kiểu mặc định của một hằng số rune chính là <code>rune</code>, còn kiểu mặc định của một hằng số chuỗi là <code>string</code>.</p>
+<h4 id="chuyen-oi-kieu-tuong-minh">Chuyển đổi kiểu tường minh<a class="headerlink" href="#chuyen-oi-kieu-tuong-minh" title="Permanent link">&para;</a></h4>
+<p>Khác với các ngôn ngữ khác — vốn đều có tính năng <code>automatic type promotion</code>, giúp tự động chuyển đổi kiểu dữ liệu khi cần thiết — Go không có tính năng này, với mục tiêu đề cao sự rõ ràng về ý định và tính dễ đọc, đồng thời tránh sự phức tạp dẫn tới kết quả không mong muốn. Khi gặp các phép toán khác kiểu dữ liệu, bạn phải bắt buộc chuyển đổi thủ công, dù đó là phép toán giữa <code>integer</code> và <code>float</code>.</p>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// Ví dụ về chuyển đổi kiểu dữ liệu</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30.2</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">sum1</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">float64</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">sum2</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sum1</span><span class="p">,</span><span class="w"> </span><span class="nx">sum2</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">// Chuyển đổi kiểu số nguyên</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="kt">byte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">sum3</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">sum4</span><span class="w"> </span><span class="kt">byte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">byte</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sum3</span><span class="p">,</span><span class="w"> </span><span class="nx">sum4</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Vì tính nghiêm ngặt về kiểu dữ liệu như vậy nên ở Go, mọi thao tác chuyển đổi đều phải thực hiện một cách tường minh (explicit). Tương tự như tính năng <code>automatic type promotion</code>, Go cũng không có tính năng <code>truthy</code> — hay nói rõ hơn, Go không xem bất kỳ kiểu dữ liệu nào khác là kiểu boolean.</p>
+<h4 id="literals-are-untyped-literal-khong-co-kieu-co-inh">Literals Are Untyped (Literal không có kiểu cố định)<a class="headerlink" href="#literals-are-untyped-literal-khong-co-kieu-co-inh" title="Permanent link">&para;</a></h4>
+<p>Các <code>literal</code> không bị ràng buộc bởi kiểu dữ liệu cụ thể. Dù không thể cộng hai biến số nguyên nếu chúng được khai báo khác kiểu — nhưng với hằng số thì khác: Go cho phép dùng một hằng số nguyên ngay trong biểu thức số thực(float proint), thậm chí gán thẳng nó cho một biến kiểu <code>float64</code>.</p>
+<div class="language-Go highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200.3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span>
+</span></code></pre></div>
+<h3 id="var-versus-var-so-voi">var Versus := (var so với :=)<a class="headerlink" href="#var-versus-var-so-voi" title="Permanent link">&para;</a></h3>
+<h3 id="su-dung-const">Sử dụng const<a class="headerlink" href="#su-dung-const" title="Permanent link">&para;</a></h3>
+<h3 id="hang-so-co-kieu-va-khong-co-kieu">Hằng số có kiểu và không có kiểu<a class="headerlink" href="#hang-so-co-kieu-va-khong-co-kieu" title="Permanent link">&para;</a></h3>
+<h3 id="unused-variables">Unused Variables<a class="headerlink" href="#unused-variables" title="Permanent link">&para;</a></h3>
+<h3 id="at-ten-bien-va-hang-so">Đặt tên biến và hằng số<a class="headerlink" href="#at-ten-bien-va-hang-so" title="Permanent link">&para;</a></h3>
+<h3 id="bai-tap">Bài tập<a class="headerlink" href="#bai-tap" title="Permanent link">&para;</a></h3>
+<h3 id="tong-ket">Tổng kết<a class="headerlink" href="#tong-ket" title="Permanent link">&para;</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../chapter_01_setting_up_go_environment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 1: Setting Up Your Go Environment">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Chapter 1: Setting Up Your Go Environment
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Learning Hub
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/viet15t12" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://facebook.com" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "content.code.annotate", "content.tabs.link", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/sidebar-toggle.js"></script>
+      
+    
+  </body>
+</html>

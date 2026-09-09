@@ -1,0 +1,3544 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://viet15t12.github.io/LearningHub/CCNA/03_OSI_Model%26TCP_Model/">
+      
+      
+        <link rel="prev" href="../02_Interfaces_and_Cables/">
+      
+      
+        <link rel="next" href="../04_Intro_to_CLI/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>3. TCP/IP và OSI Model - Learning Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-tcpip-va-osi-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learning Hub" class="md-header__button md-logo" aria-label="Learning Hub" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learning Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. TCP/IP và OSI Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Chuyển sang chế độ tối"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang chế độ tối" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Chuyển sang chế độ sáng"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang chế độ sáng" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Learning Hub
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  CCNA
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../GOLANG/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  GOLANG
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learning Hub" class="md-nav__button md-logo" aria-label="Learning Hub" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    Learning Hub
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CCNA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CCNA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_Network_Devices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Network Devices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Interfaces_and_Cables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. INTERFACES AND CABLES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. TCP/IP và OSI Model
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. TCP/IP và OSI Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-giao-thuc-va-chuan-mang-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Giao thức và chuẩn mạng là gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-so-luoc-lich-su" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Sơ lược lịch sử
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ai-inh-nghia-cac-chuan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ai định nghĩa các chuẩn?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mo-hinh-phan-lop-layered-model-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Mô hình phân lớp (Layered Model) là gì?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Mô hình phân lớp (Layered Model) là gì?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-du-gui-mot-la-thu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ẩn dụ: gửi một lá thư
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-du-xay-dung-mot-mo-hinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ẩn dụ: xây dựng một mô hình
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-du-su-phan-tach-cac-lop-separation-of-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ẩn dụ: sự phân tách các lớp (separation of layers)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mo-hinh-tcpip-5-lop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Mô hình TCP/IP (5 lớp)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Mô hình TCP/IP (5 lớp)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lop-1-physical-vat-ly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 1 — Physical (Vật lý)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lop-2-local-network-mang-cuc-bo-data-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 2 — Local Network (Mạng cục bộ / Data Link)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lop-3-internet-mang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 3 — Internet (Mạng)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lop-4-transport-van-chuyen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 4 — Transport (Vận chuyển)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lop-5-application-ung-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 5 — Application (Ứng dụng)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ong-goi-va-mo-goi-du-lieu-encapsulation-de-encapsulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Đóng gói và mở gói dữ liệu (Encapsulation &amp; De-encapsulation)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-protocol-data-unit-pdu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Protocol Data Unit (PDU)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-tuong-tac-lop-lien-ke-tuong-tac-cung-lop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Tương tác lớp liền kề &amp; tương tác cùng lớp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-mo-hinh-osi-7-lop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Mô hình OSI (7 lớp)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Mô hình OSI (7 lớp)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 — Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 — Presentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 — Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 — Transport
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 — Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 — Data Link
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-physical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 — Physical
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-so-sanh-osi-va-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. So sánh OSI và TCP/IP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-cac-phien-ban-khac-cua-mo-hinh-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Các phiên bản khác của mô hình TCP/IP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-tong-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Tổng kết
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_Intro_to_CLI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. GIỚI THIỆU VỀ CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_Ethernet_LAN_Switching_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. ETHERNET LAN SWITCHING : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_Ethernet_LAN_Switching_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. ETHERNET LAN SWITCHING : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_IPv4_Addressing_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. IPv4 ADDRESSING : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_IPv4_Addressing_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. IPv4 ADDRESSING : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_Switch_Interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. SWITCH INTERFACES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_The_IPv4_Header/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. THE IPv4 HEADER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_Routing_Fundamentals_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. ROUTING FUNDAMENTALS : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_Static_Routing_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. STATIC ROUTING : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_Life_of_a_Packet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. LIFE OF A PACKET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_Subnetting_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. SUBNETTING : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_Subnetting_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. SUBNETTING : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_Subnetting_VLSM_Part3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. SUBNETTING (VLSM) : PART 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16_VLAN_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. VLANS : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17_VLAN_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. VLANS : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18_VLAN_Part3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. VLANS : PART 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19_DTP_VTP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. DTP / VTP (Not in Syllabus)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20_Spanning_Tree_Protocol_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. SPANNING TREE PROTOCOL (STP) : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21_Spanning_Tree_Protocol_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. SPANNING TREE PROTOCOL (STP) : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22_Rapid_Spanning_Tree_Protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. RAPID SPANNING TREE PROTOCOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23_Etherchannel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. ETHERCHANNEL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24_DynamicRouting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. DYNAMIC ROUTING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25_RIP_and_EIGRP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. RIP and EIGRP (IGP : DYNAMIC VECTOR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26_OSPF_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. OSPF : PART 1 (IGP : LINK STATE)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27_OSPF_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. OSPF : PART 2 (IGP : LINK STATE)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28_OSPF_Part3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. OSPF : PART 3 (IGP: LINK STATE)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29_First_Hop_Redundancy_Protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. FIRST HOP REDUNDANCY PROTOCOLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30_TCP_and_UDP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. TCP and UDP (LAYER 4 PROTOCOLS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31_IPv6_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. IPv6 : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32_IPv6_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. IPv6 : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33_IPv6_Part3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. IPv6 : PART 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34_Standard_Access_Control_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34. STANDARD ACCESS CONTROL LISTS (ACL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35_Extended_Access_Control_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35. EXTENDED ACCESS CONTROL LISTS (EACL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36_CDP_and_LLDP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36. CDP and LLDP (Layer 2 Discovery Protocol)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37_NTP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37. NTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38_DNS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38. DNS (Domain Name System)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39_DHCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39. DHCP (Dynamic Host Configuration Protocol)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40_SNMP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    40. SNMP (Simple Network Management Protocol)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../41_SYSLOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    41. SYSLOG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../42_SSH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    42. SSH (Secure Shell)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../43_FTP_and_TFTP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    43. FTP and TFTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../44_NAT_Static_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    44. NAT (STATIC): PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45_NAT_Dynamic_Part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    45. NAT (DYNAMIC): PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46_QoS_VoiceLan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    46. QoS (Voice VLANs) : PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47_QoS_Quality_of_Service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    47. QoS (Quality of Service) : PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../48_Security_Fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    48. SECURITY FUNDAMENTALS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../49_Port_Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    49. PORT SECURITY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../50_DHCP_Snooping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    50. DHCP SNOOPING (LAYER 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../51_Dynamic_Arp_Inspection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    51. DYNAMIC ARP INSPECTION
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../52_LAN_Architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    52. LAN ARCHITECTURES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../53_WAN_Architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    53. WAN ARCHITECTURES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../54_Virtualization_Containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    54. VIRTUALIZATION (CONTAINERS): PART 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../54_Virtualization_VRF_Part3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    54. VIRTUALIZATION (VRF): PART 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../54_Virtualizations_and_Cloud_Part1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    54. VIRTUALIZATION AND CLOUD: PART 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55_Wireless_Fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    55. WIRELESS FUNDAMENTALS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../56_Wireless_Architecutres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    56. WIRELESS ARCHITECTURES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../57_Wireless_Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    57. WIRELESS SECURITY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../58_Wireless_Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    58. WIRELESS CONFIGURATION
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../59_Introduction_to_Network_Automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    59. INTRODUCTION TO NETWORK AUTOMATION
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../60_JSON_XML_YAML/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    60. JSON, XML, AND YAML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../61_REST_APIs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    61. REST APIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../62_Software_Defined_Networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    62. SOFTWARE DEFINED NETWORKING (SDN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../63_Ansible_Puppet_Chef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    63. ANSIBLE, PUPPET, AND CHEF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../GOLANG/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOLANG
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GOLANG
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GOLANG/chapter_01_setting_up_go_environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Setting Up Your Go Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GOLANG/chapter_02_predeclared_types_and_declaraions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Predeclared Types &amp; Declarations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-giao-thuc-va-chuan-mang-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Giao thức và chuẩn mạng là gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-so-luoc-lich-su" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Sơ lược lịch sử
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ai-inh-nghia-cac-chuan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ai định nghĩa các chuẩn?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mo-hinh-phan-lop-layered-model-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Mô hình phân lớp (Layered Model) là gì?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Mô hình phân lớp (Layered Model) là gì?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-du-gui-mot-la-thu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ẩn dụ: gửi một lá thư
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-du-xay-dung-mot-mo-hinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ẩn dụ: xây dựng một mô hình
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-du-su-phan-tach-cac-lop-separation-of-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ẩn dụ: sự phân tách các lớp (separation of layers)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mo-hinh-tcpip-5-lop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Mô hình TCP/IP (5 lớp)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Mô hình TCP/IP (5 lớp)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lop-1-physical-vat-ly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 1 — Physical (Vật lý)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lop-2-local-network-mang-cuc-bo-data-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 2 — Local Network (Mạng cục bộ / Data Link)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lop-3-internet-mang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 3 — Internet (Mạng)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lop-4-transport-van-chuyen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 4 — Transport (Vận chuyển)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lop-5-application-ung-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 5 — Application (Ứng dụng)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ong-goi-va-mo-goi-du-lieu-encapsulation-de-encapsulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Đóng gói và mở gói dữ liệu (Encapsulation &amp; De-encapsulation)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-protocol-data-unit-pdu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Protocol Data Unit (PDU)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-tuong-tac-lop-lien-ke-tuong-tac-cung-lop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Tương tác lớp liền kề &amp; tương tác cùng lớp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-mo-hinh-osi-7-lop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Mô hình OSI (7 lớp)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Mô hình OSI (7 lớp)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 — Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 — Presentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 — Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 — Transport
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 — Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 — Data Link
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-physical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 — Physical
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-so-sanh-osi-va-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. So sánh OSI và TCP/IP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-cac-phien-ban-khac-cua-mo-hinh-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Các phiên bản khác của mô hình TCP/IP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-tong-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Tổng kết
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3-tcpip-va-osi-model">3. TCP/IP và OSI Model<a class="headerlink" href="#3-tcpip-va-osi-model" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Tài liệu này gộp lại ghi chép cũ (chi tiết mô hình OSI 7 lớp) và nội dung buổi học mới về mô hình TCP/IP 5 lớp, trình bày lại theo một mạch thống nhất, dùng thuật ngữ kỹ thuật chuẩn tiếng Việt.</p>
+</blockquote>
+<hr />
+<h2 id="1-giao-thuc-va-chuan-mang-la-gi">1. Giao thức và chuẩn mạng là gì?<a class="headerlink" href="#1-giao-thuc-va-chuan-mang-la-gi" title="Permanent link">&para;</a></h2>
+<p><strong>Giao thức (Protocol)</strong> là tập hợp các quy tắc logic quy định cách các thiết bị và phần mềm mạng phải hoạt động và giao tiếp với nhau.</p>
+<p><strong>Chuẩn (Standard)</strong> là các quy ước được thống nhất rộng rãi để đảm bảo thiết bị của nhiều hãng khác nhau có thể tương tác được với nhau (interoperability). Nếu không có chuẩn chung, mỗi hãng sẽ tự làm theo cách riêng và mạng của các hãng khác nhau sẽ không thể nói chuyện được với nhau.</p>
+<h2 id="2-so-luoc-lich-su">2. Sơ lược lịch sử<a class="headerlink" href="#2-so-luoc-lich-su" title="Permanent link">&para;</a></h2>
+<p>Các mô hình mạng hiện nay là kết quả của nhiều thập kỷ phát triển, bắt đầu từ các dự án nghiên cứu quân sự và học thuật (đặc biệt là ARPANET của Bộ Quốc phòng Mỹ) vào cuối những năm 1960 – 1970. Nhu cầu cho các máy tính khác hãng, khác kiến trúc có thể giao tiếp được với nhau đã dẫn đến việc hình thành các bộ giao thức chuẩn hoá, trong đó nổi bật nhất là bộ giao thức TCP/IP.</p>
+<h2 id="3-ai-inh-nghia-cac-chuan">3. Ai định nghĩa các chuẩn?<a class="headerlink" href="#3-ai-inh-nghia-cac-chuan" title="Permanent link">&para;</a></h2>
+<p>Các chuẩn mạng được xây dựng và duy trì bởi nhiều tổ chức quốc tế, ví dụ:</p>
+<ul>
+<li><strong>ISO</strong> (International Organization for Standardization) — tổ chức đã xây dựng mô hình OSI.</li>
+<li><strong>IETF</strong> (Internet Engineering Task Force) — chịu trách nhiệm phát triển các chuẩn dùng trên Internet (thông qua các tài liệu RFC).</li>
+<li><strong>IEEE</strong> (Institute of Electrical and Electronics Engineers) — chuẩn hoá các công nghệ tầng vật lý và tầng liên kết dữ liệu (ví dụ Ethernet, Wi-Fi).</li>
+</ul>
+<h2 id="4-mo-hinh-phan-lop-layered-model-la-gi">4. Mô hình phân lớp (Layered Model) là gì?<a class="headerlink" href="#4-mo-hinh-phan-lop-layered-model-la-gi" title="Permanent link">&para;</a></h2>
+<p>Một mô hình phân lớp chia nhỏ một hệ thống phức tạp (như truyền thông mạng) thành nhiều lớp (layer) nhỏ hơn, mỗi lớp đảm nhiệm một chức năng riêng biệt. Việc này giúp:</p>
+<ul>
+<li>Dễ thiết kế, dễ học, dễ khắc phục sự cố (troubleshoot theo từng lớp).</li>
+<li>Các lớp có thể phát triển độc lập với nhau, miễn là giao diện giữa các lớp không đổi.</li>
+<li>Nhiều hãng có thể cùng phát triển sản phẩm cho từng lớp riêng mà vẫn tương thích với nhau.</li>
+</ul>
+<h3 id="an-du-gui-mot-la-thu">Ẩn dụ: gửi một lá thư<a class="headerlink" href="#an-du-gui-mot-la-thu" title="Permanent link">&para;</a></h3>
+<p>Khi gửi thư, bạn viết nội dung (lớp trên cùng), sau đó cho vào phong bì và ghi địa chỉ (thêm một "lớp" đóng gói), rồi bưu điện xử lý và vận chuyển vật lý (lớp dưới cùng). Người nhận sẽ làm ngược lại: mở phong bì rồi mới đọc nội dung. Đây chính là ý tưởng của encapsulation/de-encapsulation.</p>
+<h3 id="an-du-xay-dung-mot-mo-hinh">Ẩn dụ: xây dựng một mô hình<a class="headerlink" href="#an-du-xay-dung-mot-mo-hinh" title="Permanent link">&para;</a></h3>
+<p>Giống như xây nhà theo bản thiết kế chuẩn, mỗi tầng nhà (layer) được xây dựng dựa trên nền tảng của tầng bên dưới và chỉ cần biết "giao diện" kết nối với tầng liền kề, không cần biết chi tiết bên trong tầng đó hoạt động ra sao.</p>
+<h3 id="an-du-su-phan-tach-cac-lop-separation-of-layers">Ẩn dụ: sự phân tách các lớp (separation of layers)<a class="headerlink" href="#an-du-su-phan-tach-cac-lop-separation-of-layers" title="Permanent link">&para;</a></h3>
+<p>Nhờ các lớp được tách biệt rõ ràng, một lớp có thể thay đổi công nghệ bên trong (ví dụ đổi từ cáp đồng sang cáp quang ở lớp vật lý) mà không ảnh hưởng đến cách các lớp phía trên hoạt động.</p>
+<hr />
+<h2 id="5-mo-hinh-tcpip-5-lop">5. Mô hình TCP/IP (5 lớp)<a class="headerlink" href="#5-mo-hinh-tcpip-5-lop" title="Permanent link">&para;</a></h2>
+<p>Mô hình TCP/IP là mô hình khái niệm và tập hợp giao thức truyền thông thực sự được dùng trên Internet và hầu hết các mạng hiện đại ngày nay. Nó có cấu trúc tương tự OSI nhưng gộp lại còn 5 lớp (một số tài liệu trình bày TCP/IP chỉ với 4 lớp bằng cách gộp Physical và Local Network làm một — xem mục 11).</p>
+<h3 id="lop-1-physical-vat-ly">Lớp 1 — Physical (Vật lý)<a class="headerlink" href="#lop-1-physical-vat-ly" title="Permanent link">&para;</a></h3>
+<p>Quy định các đặc tính vật lý của môi trường truyền dẫn: mức điện áp, khoảng cách truyền tối đa, loại đầu nối, thông số cáp... Dữ liệu số (bit 0/1) được chuyển thành tín hiệu điện (cáp đồng) hoặc tín hiệu vô tuyến (không dây) để truyền đi.</p>
+<h3 id="lop-2-local-network-mang-cuc-bo-data-link">Lớp 2 — Local Network (Mạng cục bộ / Data Link)<a class="headerlink" href="#lop-2-local-network-mang-cuc-bo-data-link" title="Permanent link">&para;</a></h3>
+<p>Chịu trách nhiệm truyền dữ liệu giữa các thiết bị trong cùng một mạng cục bộ (node-to-node), ví dụ PC–Switch, Switch–Router. Định dạng dữ liệu để truyền qua môi trường vật lý, phát hiện (và có thể sửa) lỗi ở tầng vật lý, sử dụng địa chỉ Lớp 2 (địa chỉ MAC) riêng biệt với địa chỉ Lớp 3. <strong>Switch</strong> hoạt động ở lớp này.</p>
+<h3 id="lop-3-internet-mang">Lớp 3 — Internet (Mạng)<a class="headerlink" href="#lop-3-internet-mang" title="Permanent link">&para;</a></h3>
+<p>Cung cấp khả năng kết nối giữa các host nằm trên các mạng khác nhau (ngoài phạm vi LAN). Cung cấp đánh địa chỉ logic (địa chỉ IP) và lựa chọn đường đi (routing) giữa nguồn và đích. <strong>Router</strong> hoạt động ở lớp này.</p>
+<h3 id="lop-4-transport-van-chuyen">Lớp 4 — Transport (Vận chuyển)<a class="headerlink" href="#lop-4-transport-van-chuyen" title="Permanent link">&para;</a></h3>
+<p>Phân đoạn (segment) dữ liệu lớn thành các đoạn nhỏ hơn để dễ truyền qua mạng và giảm rủi ro khi có lỗi truyền dẫn, đồng thời tái hợp (reassemble) lại ở phía nhận. Cung cấp giao tiếp end-to-end (host-to-host) giữa nguồn và đích.</p>
+<h3 id="lop-5-application-ung-dung">Lớp 5 — Application (Ứng dụng)<a class="headerlink" href="#lop-5-application-ung-dung" title="Permanent link">&para;</a></h3>
+<p>Trong mô hình TCP/IP, lớp Application gộp chung chức năng của 3 lớp trên cùng của OSI (Application, Presentation, Session). Đây là lớp gần người dùng cuối nhất, tương tác trực tiếp với các phần mềm ứng dụng. HTTP/HTTPS là các giao thức hoạt động ở lớp này.</p>
+<blockquote>
+<p>Nhìn chung, kỹ sư mạng (network engineer) ít khi làm việc trực tiếp với các lớp trên cùng (tương đương Application/Presentation/Session của OSI) — đây là phạm vi công việc chính của lập trình viên ứng dụng (application developer).</p>
+</blockquote>
+<hr />
+<h2 id="6-ong-goi-va-mo-goi-du-lieu-encapsulation-de-encapsulation">6. Đóng gói và mở gói dữ liệu (Encapsulation &amp; De-encapsulation)<a class="headerlink" href="#6-ong-goi-va-mo-goi-du-lieu-encapsulation-de-encapsulation" title="Permanent link">&para;</a></h2>
+<p>Khi dữ liệu đi từ lớp trên xuống lớp dưới để chuẩn bị truyền đi, mỗi lớp sẽ thêm phần header (và ở Lớp 2 có thêm trailer) riêng của mình vào trước dữ liệu — quá trình này gọi là <strong>Encapsulation</strong>.</p>
+<p>Khi dữ liệu đến nơi nhận và đi từ lớp dưới cùng (Physical) lên lớp trên cùng (Application), từng lớp sẽ tuần tự gỡ bỏ phần header/trailer tương ứng của lớp đó — quá trình này gọi là <strong>De-encapsulation</strong>.</p>
+<p><img alt="Quá trình đóng gói dữ liệu" src="../../assets/ccna/03/encapsulation.svg" /></p>
+<h2 id="7-protocol-data-unit-pdu">7. Protocol Data Unit (PDU)<a class="headerlink" href="#7-protocol-data-unit-pdu" title="Permanent link">&para;</a></h2>
+<p>PDU là đơn vị dữ liệu ở mỗi bước của quá trình đóng gói. Tên gọi PDU thay đổi tuỳ theo lớp mà dữ liệu đang ở:</p>
+<table>
+<thead>
+<tr>
+<th>Lớp OSI</th>
+<th>Tên PDU</th>
+<th>Dữ liệu được thêm vào</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7–5 (Application)</td>
+<td>DATA</td>
+<td>Dữ liệu gốc</td>
+</tr>
+<tr>
+<td>4 (Transport)</td>
+<td>SEGMENT</td>
+<td>Thêm Header Lớp 4</td>
+</tr>
+<tr>
+<td>3 (Network)</td>
+<td>PACKET</td>
+<td>Thêm Header Lớp 3</td>
+</tr>
+<tr>
+<td>2 (Data Link)</td>
+<td>FRAME</td>
+<td>Thêm Header và Trailer Lớp 2</td>
+</tr>
+<tr>
+<td>1 (Physical)</td>
+<td>BIT</td>
+<td>Chuyển thành chuỗi bit 0/1 để truyền</td>
+</tr>
+</tbody>
+</table>
+<p>Cấu trúc một Frame hoàn chỉnh: <code>L2 Trailer + DATA + L4 Header + L3 Header + L2 Header</code></p>
+<h2 id="8-tuong-tac-lop-lien-ke-tuong-tac-cung-lop">8. Tương tác lớp liền kề &amp; tương tác cùng lớp<a class="headerlink" href="#8-tuong-tac-lop-lien-ke-tuong-tac-cung-lop" title="Permanent link">&para;</a></h2>
+<p><strong>Tương tác lớp liền kề (Adjacent-layer interaction):</strong>
+Là sự tương tác giữa các lớp khác nhau nhưng trên cùng một thiết bị (host). Ví dụ: các Lớp 5–7 gửi dữ liệu xuống Lớp 4, Lớp 4 thêm Header Lớp 4 vào để tạo thành một Segment.</p>
+<p><strong>Tương tác cùng lớp (Same-layer interaction):</strong>
+Là sự tương tác giữa cùng một lớp nhưng trên hai thiết bị khác nhau. Khái niệm này cho phép ta "bỏ qua" các lớp khác và chỉ tập trung vào tương tác của một lớp cụ thể giữa hai bên. Ví dụ: Lớp Application của server YouTube và Lớp Application của trình duyệt trên máy tính của bạn "nói chuyện" trực tiếp với nhau (về mặt logic), dù dữ liệu thực tế vẫn phải đi qua toàn bộ chồng giao thức (protocol stack) ở cả hai phía.</p>
+<hr />
+<h2 id="9-mo-hinh-osi-7-lop">9. Mô hình OSI (7 lớp)<a class="headerlink" href="#9-mo-hinh-osi-7-lop" title="Permanent link">&para;</a></h2>
+<p><strong>OSI (Open Systems Interconnection)</strong> là mô hình khái niệm phân loại và chuẩn hoá các chức năng khác nhau trong một mạng máy tính, do tổ chức <strong>ISO</strong> xây dựng. Chức năng mạng được chia thành 7 lớp, các lớp phối hợp với nhau để mạng hoạt động được. Dù ngày nay mạng thực tế vận hành theo mô hình TCP/IP, OSI vẫn ảnh hưởng lớn đến cách kỹ sư mạng tư duy và trao đổi khái niệm.</p>
+<h3 id="7-application">7 — Application<a class="headerlink" href="#7-application" title="Permanent link">&para;</a></h3>
+<p>Lớp gần người dùng cuối nhất, tương tác với các phần mềm ứng dụng. HTTP và HTTPS là các giao thức Lớp 7. Chức năng chính: định danh đối tác giao tiếp, đồng bộ hoá giao tiếp.</p>
+<h3 id="6-presentation">6 — Presentation<a class="headerlink" href="#6-presentation" title="Permanent link">&para;</a></h3>
+<p>Chuyển đổi dữ liệu sang định dạng phù hợp (giữa định dạng ứng dụng và định dạng mạng) để có thể truyền qua mạng.</p>
+<h3 id="5-session">5 — Session<a class="headerlink" href="#5-session" title="Permanent link">&para;</a></h3>
+<p>Điều khiển các phiên (session) hội thoại giữa các host giao tiếp với nhau: thiết lập, quản lý và kết thúc kết nối giữa ứng dụng cục bộ và ứng dụng ở xa.</p>
+<blockquote>
+<p>Kỹ sư mạng thường không làm việc trực tiếp với 3 lớp trên cùng này; đây là phạm vi của lập trình viên ứng dụng.</p>
+</blockquote>
+<h3 id="4-transport">4 — Transport<a class="headerlink" href="#4-transport" title="Permanent link">&para;</a></h3>
+<p>Phân đoạn và tái hợp dữ liệu để giao tiếp giữa các host đầu cuối. Chia nhỏ dữ liệu lớn thành các segment để dễ truyền và ít gây lỗi hơn. Cung cấp giao tiếp host-to-host (end-to-end). Khi dữ liệu từ Lớp 7-5 đến, nó nhận thêm Header Lớp 4 → tạo thành <strong>SEGMENT</strong>.</p>
+<h3 id="3-network">3 — Network<a class="headerlink" href="#3-network" title="Permanent link">&para;</a></h3>
+<p>Cung cấp kết nối giữa các host ở các mạng khác nhau (ngoài LAN). Cung cấp đánh địa chỉ logic (địa chỉ IP) và lựa chọn đường đi giữa nguồn và đích. <strong>Router</strong> hoạt động ở lớp này. Segment nhận thêm Header Lớp 3 → tạo thành <strong>PACKET</strong>.</p>
+<h3 id="2-data-link">2 — Data Link<a class="headerlink" href="#2-data-link" title="Permanent link">&para;</a></h3>
+<p>Cung cấp kết nối và truyền dữ liệu node-to-node (ví dụ PC–Switch, Switch–Router, Router–Router). Định dạng dữ liệu để truyền qua môi trường vật lý, phát hiện (và có thể sửa) lỗi Lớp 1, dùng địa chỉ Lớp 2 riêng biệt với địa chỉ Lớp 3. <strong>Switch</strong> hoạt động ở lớp này. Packet nhận thêm Header và Trailer Lớp 2 → tạo thành <strong>FRAME</strong>.</p>
+<h3 id="1-physical">1 — Physical<a class="headerlink" href="#1-physical" title="Permanent link">&para;</a></h3>
+<p>Quy định đặc tính vật lý của môi trường truyền dữ liệu: mức điện áp, khoảng cách truyền tối đa, loại đầu nối, thông số cáp. Bit số được chuyển thành tín hiệu điện (kết nối có dây) hoặc tín hiệu vô tuyến (không dây).</p>
+<hr />
+<h2 id="10-so-sanh-osi-va-tcpip">10. So sánh OSI và TCP/IP<a class="headerlink" href="#10-so-sanh-osi-va-tcpip" title="Permanent link">&para;</a></h2>
+<p><img alt="So sánh OSI và TCP/IP" src="../../assets/ccna/03/osi_vs_tcpip.svg" /></p>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>OSI</th>
+<th>TCP/IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Số lớp</td>
+<td>7</td>
+<td>5 (hoặc 4 tuỳ cách trình bày)</td>
+</tr>
+<tr>
+<td>Nguồn gốc</td>
+<td>Do ISO xây dựng, mang tính lý thuyết/khái niệm</td>
+<td>Do DARPA (Bộ Quốc phòng Mỹ) phát triển, dùng thực tế</td>
+</tr>
+<tr>
+<td>Vai trò hiện nay</td>
+<td>Khung tư duy, dùng để trao đổi khái niệm giữa kỹ sư mạng</td>
+<td>Mô hình thực sự đang vận hành trên Internet</td>
+</tr>
+<tr>
+<td>Application/Presentation/Session</td>
+<td>3 lớp riêng biệt</td>
+<td>Gộp chung thành 1 lớp Application</td>
+</tr>
+<tr>
+<td>Data Link/Physical</td>
+<td>2 lớp riêng biệt</td>
+<td>Gộp chung thành 1 lớp Local Network (ở bản 4 lớp)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-cac-phien-ban-khac-cua-mo-hinh-tcpip">11. Các phiên bản khác của mô hình TCP/IP<a class="headerlink" href="#11-cac-phien-ban-khac-cua-mo-hinh-tcpip" title="Permanent link">&para;</a></h2>
+<p>Ngoài phiên bản 5 lớp (Physical, Local Network, Internet, Transport, Application) trình bày ở trên, một số tài liệu — đặc biệt là tài liệu gốc từ DARPA — trình bày TCP/IP chỉ với <strong>4 lớp</strong>, bằng cách gộp luôn Physical và Data Link thành một lớp duy nhất gọi là <strong>Network Access</strong> (hoặc Network Interface). Về bản chất chức năng không đổi, chỉ khác cách nhóm các lớp lại với nhau. Đây là lý do vì sao khi đọc các tài liệu khác nhau, số lớp của TCP/IP có thể được ghi là 4 hoặc 5.</p>
+<h2 id="12-tong-ket">12. Tổng kết<a class="headerlink" href="#12-tong-ket" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Mô hình phân lớp giúp chuẩn hoá, đơn giản hoá việc thiết kế và khắc phục sự cố mạng.</li>
+<li><strong>TCP/IP</strong> là mô hình đang thực sự vận hành trên Internet và hầu hết mạng hiện đại; <strong>OSI</strong> vẫn là khung khái niệm quan trọng để kỹ sư mạng tư duy và giao tiếp.</li>
+<li>Dữ liệu di chuyển xuống chồng giao thức thông qua <strong>encapsulation</strong> (thêm header/trailer ở mỗi lớp) và di chuyển lên thông qua <strong>de-encapsulation</strong>.</li>
+<li>Mỗi lớp có PDU riêng: Data → Segment → Packet → Frame → Bit.</li>
+<li>Có hai kiểu tương tác giữa các lớp: <strong>adjacent-layer</strong> (giữa các lớp khác nhau, cùng thiết bị) và <strong>same-layer</strong> (cùng lớp, khác thiết bị).</li>
+<li>Router hoạt động ở Lớp 3 (Network/Internet); Switch hoạt động ở Lớp 2 (Data Link/Local Network).</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02_Interfaces_and_Cables/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. INTERFACES AND CABLES">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2. INTERFACES AND CABLES
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04_Intro_to_CLI/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. GIỚI THIỆU VỀ CLI">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                4. GIỚI THIỆU VỀ CLI
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Learning Hub
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/viet15t12" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://facebook.com" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "content.code.annotate", "content.tabs.link", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/sidebar-toggle.js"></script>
+      
+    
+  </body>
+</html>

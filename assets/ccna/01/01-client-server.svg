@@ -1,0 +1,15 @@
+<svg viewBox="0 0 780 200" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="776" height="196" rx="16" fill="#ffffff" stroke="#111111" stroke-width="3"/>
+  <rect x="60" y="60" width="110" height="80" rx="6" fill="none" stroke="#0e9488" stroke-width="1.5"/>
+  <rect x="75" y="75" width="80" height="10" rx="2" fill="#0e9488" opacity="0.5"/>
+  <rect x="75" y="92" width="80" height="10" rx="2" fill="#0e9488" opacity="0.3"/>
+  <rect x="75" y="109" width="80" height="10" rx="2" fill="#0e9488" opacity="0.5"/>
+  <text x="115" y="158" fill="#333333" font-family="monospace" font-size="12" text-anchor="middle">SERVER</text>
+  <rect x="610" y="60" width="110" height="80" rx="6" fill="none" stroke="#6c4fd6" stroke-width="1.5"/>
+  <circle cx="665" cy="90" r="12" fill="none" stroke="#6c4fd6" stroke-width="1.5"/>
+  <path d="M645 122 q20 -18 40 0" fill="none" stroke="#6c4fd6" stroke-width="1.5"/>
+  <text x="665" y="158" fill="#333333" font-family="monospace" font-size="12" text-anchor="middle">CLIENT</text>
+  <line x1="170" y1="100" x2="610" y2="100" stroke="#cccccc" stroke-width="2"/>
+  <circle cx="300" cy="100" r="4" fill="#0e9488"/>
+  <text x="390" y="80" fill="#b5730f" font-family="monospace" font-size="11" text-anchor="middle">yêu cầu / phản hồi dịch vụ</text>
+</svg>

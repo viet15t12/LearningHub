@@ -1,0 +1,38 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="760" height="380" fill="#ffffff"/>
+  <text x="380" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#1f2937">1000BASE-T / Auto MDI-X – 4 Cặp Song Hướng</text>
+
+  <!-- Device A -->
+  <rect x="40" y="140" width="150" height="100" rx="10" fill="#ede9fe" stroke="#6d28d9" stroke-width="3"/>
+  <text x="115" y="195" text-anchor="middle" font-size="17" font-weight="700" fill="#4c1d95">THIẾT BỊ A</text>
+
+  <!-- Device B -->
+  <rect x="570" y="140" width="150" height="100" rx="10" fill="#ede9fe" stroke="#6d28d9" stroke-width="3"/>
+  <text x="645" y="195" text-anchor="middle" font-size="17" font-weight="700" fill="#4c1d95">THIẾT BỊ B</text>
+
+  <!-- 4 bidirectional pairs -->
+  <g stroke-width="3.5" fill="none">
+    <line x1="190" y1="150" x2="570" y2="150" stroke="#f97316" marker-start="url(#dS)" marker-end="url(#dE)"/>
+    <line x1="190" y1="177" x2="570" y2="177" stroke="#22c55e" marker-start="url(#dS)" marker-end="url(#dE)"/>
+    <line x1="190" y1="204" x2="570" y2="204" stroke="#3b82f6" marker-start="url(#dS)" marker-end="url(#dE)"/>
+    <line x1="190" y1="231" x2="570" y2="231" stroke="#78350f" marker-start="url(#dS)" marker-end="url(#dE)"/>
+  </g>
+  <g font-size="12" fill="#374151">
+    <text x="380" y="143">Cặp 1 (song hướng)</text>
+    <text x="380" y="170">Cặp 2 (song hướng)</text>
+    <text x="380" y="197">Cặp 3 (song hướng)</text>
+    <text x="380" y="224">Cặp 4 (song hướng)</text>
+  </g>
+
+  <defs>
+    <marker id="dS" markerWidth="9" markerHeight="9" refX="1" refY="4.5" orient="auto">
+      <path d="M9,0 L0,4.5 L9,9 z" fill="#111827"/>
+    </marker>
+    <marker id="dE" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#111827"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="290" text-anchor="middle" font-size="14" fill="#4b5563">Mỗi cặp dây tự truyền và nhận cùng lúc → tốc độ cao hơn</text>
+  <text x="380" y="315" text-anchor="middle" font-size="13" fill="#6b7280">Auto MDI-X tự động phát hiện chiều TX/RX của thiết bị kết nối</text>
+</svg>

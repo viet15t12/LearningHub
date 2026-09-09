@@ -1,0 +1,37 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="760" height="380" fill="#ffffff"/>
+  <text x="380" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#1f2937">PC ↔ Switch: Cáp Straight-Through</text>
+
+  <!-- PC box -->
+  <rect x="40" y="120" width="160" height="100" rx="10" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+  <text x="120" y="175" text-anchor="middle" font-size="20" font-weight="700" fill="#1e3a8a">PC</text>
+
+  <!-- Switch box -->
+  <rect x="560" y="120" width="160" height="100" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="640" y="175" text-anchor="middle" font-size="20" font-weight="700" fill="#14532d">SWITCH</text>
+
+  <!-- cable line -->
+  <line x1="200" y1="150" x2="560" y2="150" stroke="#374151" stroke-width="3"/>
+  <line x1="200" y1="190" x2="560" y2="190" stroke="#374151" stroke-width="3"/>
+
+  <!-- Arrows TX/RX -->
+  <g font-size="15" font-weight="600">
+    <line x1="220" y1="150" x2="540" y2="150" stroke="#1d4ed8" stroke-width="4" marker-end="url(#arrowBlue)"/>
+    <text x="380" y="140" text-anchor="middle" fill="#1d4ed8">PC TX (Pin 1-2)  →  Switch RX (Pin 1-2)</text>
+
+    <line x1="540" y1="190" x2="220" y2="190" stroke="#f97316" stroke-width="4" marker-end="url(#arrowOrange)"/>
+    <text x="380" y="215" text-anchor="middle" fill="#c2410c">Switch TX (Pin 3,6)  →  PC RX (Pin 3,6)</text>
+  </g>
+
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f97316"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="280" text-anchor="middle" font-size="14" fill="#4b5563">Kết nối Full-Duplex: mỗi thiết bị vừa gửi vừa nhận cùng lúc</text>
+  <text x="380" y="330" text-anchor="middle" font-size="13" fill="#6b7280">Router và PC đấu dây với Switch theo cùng một cách</text>
+</svg>

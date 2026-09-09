@@ -1,0 +1,242 @@
+/* ============================================================
+   LEARNING HUB - THEME TÙY CHỈNH: XANH #3B82F6 CHỦ ĐẠO
+   ============================================================ */
+
+:root {
+    --blue-50: #eff6ff;
+    --blue-100: #dbeafe;
+    --blue-200: #bfdbfe;
+    --blue-300: #93c5fd;
+    --blue-500: #3b82f6;
+    --blue-600: #2563eb;
+    --blue-700: #1d4ed8;
+    --blue-900: #0f172a;
+    --blue-950: #020b1d;
+}
+
+/* ---------- Chế độ sáng: nền trắng, nhấn xanh chủ đạo ---------- */
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #3b82f6;
+    --md-primary-fg-color--light: #60a5fa;
+    --md-primary-fg-color--dark: #1d4ed8;
+    --md-accent-fg-color: #2563eb;
+
+    --md-default-bg-color: #f8fbff;
+    --md-default-fg-color: #0f172a;
+    --md-default-fg-color--light: #475569;
+    --md-typeset-a-color: #2563eb;
+    --md-code-bg-color: #f1f5f9;
+}
+
+/* ---------- Chế độ tối: nền xanh đen đậm, nhấn xanh chủ đạo ---------- */
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #3b82f6;
+    --md-primary-fg-color--light: #60a5fa;
+    --md-primary-fg-color--dark: #1d4ed8;
+    --md-accent-fg-color: #93c5fd;
+
+    --md-default-bg-color: #091421;
+    --md-default-fg-color: #e2e8f0;
+    --md-default-fg-color--light: #cbd5e1;
+    --md-typeset-a-color: #93c5fd;
+
+    --md-code-bg-color: #111f2d;
+    --md-code-fg-color: #dbeafe;
+}
+
+/* ---------- Header & Tabs: hàng đầu, sáng rõ, modern ---------- */
+.md-header,
+.md-tabs {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
+    box-shadow: 0 2px 12px rgba(59, 130, 246, 0.25);
+}
+
+.md-header__topic,
+.md-tabs__item--active,
+.md-tabs__item:hover {
+    color: #ffffff !important;
+}
+
+/* ---------- Font code ---------- */
+.md-typeset code,
+.md-typeset pre {
+    font-family: "Fira Code", monospace;
+    font-size: 0.85em;
+}
+
+/* ---------- Footer: đồng bộ tông xanh đen đậm ---------- */
+.md-footer {
+    background: linear-gradient(180deg, #0b1728 0%, #0f172a 100%);
+}
+
+.md-footer-meta {
+    background: rgba(15, 23, 42, 0.96);
+}
+
+.md-footer__link {
+    color: #e2e8f0;
+}
+
+.md-footer__link:hover {
+    color: #93c5fd;
+}
+
+/* ---------- Admonition (callout): viền xanh nổi bật ---------- */
+.md-typeset .admonition,
+.md-typeset details {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.08);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+    background: rgba(59, 130, 246, 0.09);
+    color: var(--md-default-fg-color);
+}
+
+/* ---------- Button toggle sáng/tối ---------- */
+.md-header__button.md-icon {
+    border-radius: 6px;
+}
+
+/* ---------- Link hover / focus ---------- */
+.md-typeset a:hover,
+.md-typeset a:focus {
+    color: #1d4ed8;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover,
+[data-md-color-scheme="slate"] .md-typeset a:focus {
+    color: #bfdbfe;
+}
+
+/* ============================================================
+   MỞ RỘNG BỀ NGANG: content + sidebar navigation
+   ============================================================ */
+
+.md-grid {
+    max-width: 100%;
+}
+
+.md-main__inner {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+}
+
+.md-content {
+    max-width: none;
+}
+
+.md-sidebar--primary {
+    width: 14rem;
+    transition: width 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-toggle {
+    display: inline-grid;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    margin-left: 0.2rem;
+    padding: 0.4rem;
+    color: var(--md-primary-bg-color);
+    background: transparent;
+    border: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-toggle svg {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+    transition: transform 0.2s ease;
+}
+
+body.sidebar-collapsed .md-sidebar--primary {
+    width: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+}
+
+body.sidebar-collapsed .sidebar-toggle svg {
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width: 76.234375em) {
+    .sidebar-toggle {
+        display: none;
+    }
+
+    body.sidebar-collapsed .md-sidebar--primary {
+        width: auto;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+}
+
+.md-sidebar--secondary {
+    width: 14rem;
+}
+
+.md-nav__item .md-nav__link {
+    font-size: 0.75rem;
+}
+
+/* SVG diagrams trong tài liệu */
+.network-svg {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+}
+
+.network-svg line.network-wire,
+.network-svg path.network-wire {
+    stroke-dasharray: 8 5;
+    stroke-dashoffset: 0;
+    animation: network-flow 2.2s linear infinite;
+}
+
+.network-svg rect,
+.network-svg ellipse,
+.network-svg circle:not(.network-dot),
+.network-svg path:not(.network-wire),
+.network-svg line:not(.network-wire) {
+    animation: none !important;
+}
+
+.network-dot {
+    animation: network-pulse 1.2s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+@keyframes network-flow {
+    to {
+        stroke-dashoffset: -100;
+    }
+}
+
+@keyframes network-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.18);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,28 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="700" height="400" fill="#ffffff"/>
+  <text x="350" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#1f2937">4 Thành Phần Của Cáp Quang</text>
+
+  <!-- concentric circles: jacket, strength member ring, cladding, core -->
+  <circle cx="350" cy="220" r="150" fill="#fef3c7" stroke="#92400e" stroke-width="3"/>
+  <circle cx="350" cy="220" r="110" fill="#fde68a" stroke="#b45309" stroke-width="2.5"/>
+  <circle cx="350" cy="220" r="70" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.5"/>
+  <circle cx="350" cy="220" r="25" fill="#fca5a5" stroke="#b91c1c" stroke-width="2.5"/>
+
+  <!-- labels with leader lines -->
+  <g font-size="14" fill="#374151">
+    <line x1="350" y1="220" x2="180" y2="110" stroke="#6b7280"/>
+    <text x="70" y="105" fill="#b91c1c" font-weight="700">Lõi (Core)</text>
+    <text x="70" y="123">Truyền tia sáng</text>
+
+    <line x1="420" y1="180" x2="560" y2="110" stroke="#6b7280"/>
+    <text x="500" y="105" fill="#1d4ed8" font-weight="700">Lớp bọc quang (Cladding)</text>
+    <text x="500" y="123">Phản xạ ánh sáng vào lõi</text>
+
+    <line x1="450" y1="150" x2="600" y2="230" stroke="#6b7280"/>
+    <text x="540" y="248" fill="#b45309" font-weight="700">Lớp gia cường</text>
+    <text x="540" y="266">(Strength member)</text>
+
+    <line x1="480" y1="320" x2="600" y2="360" stroke="#6b7280"/>
+    <text x="500" y="380" fill="#92400e" font-weight="700">Vỏ bọc ngoài (Jacket)</text>
+  </g>
+</svg>
